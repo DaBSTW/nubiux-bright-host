@@ -1,0 +1,325 @@
+import {
+  Activity,
+  BadgeCheck,
+  Bug,
+  Check,
+  CloudCog,
+  Database,
+  Download,
+  FolderOpen,
+  Gauge,
+  Globe2,
+  HardDrive,
+  Headphones,
+  KeyRound,
+  LayoutDashboard,
+  Lock,
+  Mail,
+  MousePointerClick,
+  RefreshCcw,
+  RotateCcw,
+  Rocket,
+  Server,
+  ServerCog,
+  ShieldAlert,
+  ShieldCheck,
+  Sparkles,
+  Timer,
+  TrendingUp,
+  Zap,
+  type LucideIcon,
+} from "lucide-react";
+import cpanelImage from "@/assets/cpanel-dashboard.jpg";
+import { useI18n } from "@/lib/i18n";
+import { Reveal, SectionHeading } from "./Reveal";
+
+function IconTile({ icon: Icon }: { icon: LucideIcon }) {
+  return (
+    <span className="inline-flex size-11 items-center justify-center rounded-xl bg-accent text-accent-foreground">
+      <Icon className="size-5" aria-hidden="true" />
+    </span>
+  );
+}
+
+const licenses: { key: string; icon: LucideIcon }[] = [
+  { key: "lic.1", icon: LayoutDashboard },
+  { key: "lic.2", icon: MousePointerClick },
+  { key: "lic.3", icon: Download },
+  { key: "lic.4", icon: Sparkles },
+  { key: "lic.5", icon: Lock },
+  { key: "lic.6", icon: RotateCcw },
+  { key: "lic.7", icon: Zap },
+  { key: "lic.8", icon: CloudCog },
+  { key: "lic.9", icon: ShieldAlert },
+  { key: "lic.10", icon: ServerCog },
+  { key: "lic.11", icon: Timer },
+  { key: "lic.12", icon: BadgeCheck },
+  { key: "lic.13", icon: RefreshCcw },
+  { key: "lic.14", icon: Headphones },
+];
+
+export function Licenses() {
+  const { t } = useI18n();
+  return (
+    <section id="licenses" className="scroll-mt-20 border-y border-border surface-soft py-20 lg:py-28">
+      <div className="mx-auto max-w-6xl px-5 lg:px-8">
+        <SectionHeading eyebrow={t("lic.eyebrow")} title={t("lic.title")} subtitle={t("lic.subtitle")} />
+        <ul className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {licenses.map((l, i) => (
+            <Reveal as="li" key={l.key} delay={(i % 3) * 80}>
+              <div className="card-elevated flex h-full items-center gap-4 px-5 py-4.5">
+                <IconTile icon={l.icon} />
+                <span className="text-sm font-semibold text-foreground">{t(l.key)}</span>
+                <Check className="ml-auto size-4 shrink-0 text-primary" aria-hidden="true" />
+              </div>
+            </Reveal>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
+const why: { key: string; icon: LucideIcon }[] = [
+  { key: "why.1", icon: HardDrive },
+  { key: "why.2", icon: ShieldCheck },
+  { key: "why.3", icon: Globe2 },
+  { key: "why.4", icon: Rocket },
+  { key: "why.5", icon: ShieldAlert },
+  { key: "why.6", icon: Activity },
+  { key: "why.7", icon: RotateCcw },
+  { key: "why.8", icon: Headphones },
+];
+
+export function WhyNubiux() {
+  const { t } = useI18n();
+  return (
+    <section id="features" className="scroll-mt-20 bg-background py-20 lg:py-28">
+      <div className="mx-auto max-w-6xl px-5 lg:px-8">
+        <SectionHeading eyebrow={t("why.eyebrow")} title={t("why.title")} subtitle={t("why.subtitle")} />
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {why.map((w, i) => (
+            <Reveal key={w.key} delay={(i % 4) * 80}>
+              <article className="card-elevated h-full p-6">
+                <IconTile icon={w.icon} />
+                <h3 className="mt-5 text-base font-bold text-foreground">{t(`${w.key}.t`)}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(`${w.key}.d`)}</p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const cpanelItems: { key: string; icon: LucideIcon }[] = [
+  { key: "cpanel.1", icon: Globe2 },
+  { key: "cpanel.2", icon: MousePointerClick },
+  { key: "cpanel.3", icon: Mail },
+  { key: "cpanel.4", icon: Database },
+  { key: "cpanel.5", icon: RotateCcw },
+  { key: "cpanel.6", icon: FolderOpen },
+];
+
+export function CPanelSection() {
+  const { t } = useI18n();
+  return (
+    <section className="border-y border-border surface-soft py-20 lg:py-28">
+      <div className="mx-auto grid max-w-6xl items-center gap-14 px-5 lg:grid-cols-2 lg:px-8">
+        <div>
+          <SectionHeading
+            align="left"
+            eyebrow={t("cpanel.eyebrow")}
+            title={t("cpanel.title")}
+            subtitle={t("cpanel.subtitle")}
+          />
+          <ul className="mt-9 grid gap-3.5 sm:grid-cols-2">
+            {cpanelItems.map((c, i) => (
+              <Reveal as="li" key={c.key} delay={i * 60} className="flex items-start gap-3">
+                <span className="mt-0.5 inline-flex size-6 shrink-0 items-center justify-center rounded-lg bg-accent text-accent-foreground">
+                  <c.icon className="size-3.5" aria-hidden="true" />
+                </span>
+                <span className="text-sm font-medium text-foreground">{t(c.key)}</span>
+              </Reveal>
+            ))}
+          </ul>
+        </div>
+        <Reveal delay={120}>
+          <img
+            src={cpanelImage}
+            alt={t("cpanel.imageAlt")}
+            width={1280}
+            height={960}
+            loading="lazy"
+            decoding="async"
+            className="h-auto w-full rounded-3xl border border-border shadow-[var(--shadow-lift)]"
+          />
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+const apps = ["WordPress", "Joomla", "Drupal", "PrestaShop", "Magento", "phpBB", "Laravel"];
+
+export function Softaculous() {
+  const { t } = useI18n();
+  return (
+    <section className="bg-background py-20 lg:py-28">
+      <div className="mx-auto max-w-6xl px-5 lg:px-8">
+        <SectionHeading eyebrow={t("soft.eyebrow")} title={t("soft.title")} subtitle={t("soft.subtitle")} />
+        <ul className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-7">
+          {apps.map((app, i) => (
+            <Reveal as="li" key={app} delay={i * 60}>
+              <div className="card-elevated flex h-full flex-col items-center gap-3 px-4 py-6 text-center">
+                <span className="inline-flex size-12 items-center justify-center rounded-2xl bg-accent text-base font-bold text-accent-foreground">
+                  {app.slice(0, 2)}
+                </span>
+                <span className="text-sm font-semibold text-foreground">{app}</span>
+              </div>
+            </Reveal>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
+const security: { key: string; icon: LucideIcon }[] = [
+  { key: "sec.1", icon: ShieldAlert },
+  { key: "sec.2", icon: ServerCog },
+  { key: "sec.3", icon: KeyRound },
+  { key: "sec.4", icon: Lock },
+  { key: "sec.5", icon: ShieldCheck },
+  { key: "sec.6", icon: Bug },
+  { key: "sec.7", icon: RefreshCcw },
+];
+
+export function Security() {
+  const { t } = useI18n();
+  return (
+    <section id="security" className="scroll-mt-20 border-y border-border surface-soft py-20 lg:py-28">
+      <div className="mx-auto max-w-6xl px-5 lg:px-8">
+        <SectionHeading eyebrow={t("sec.eyebrow")} title={t("sec.title")} subtitle={t("sec.subtitle")} />
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {security.map((s, i) => (
+            <Reveal key={s.key} delay={(i % 4) * 80}>
+              <article className="card-elevated h-full p-6">
+                <IconTile icon={s.icon} />
+                <h3 className="mt-5 text-base font-bold text-foreground">{t(`${s.key}.t`)}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(`${s.key}.d`)}</p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const perf: { key: string; icon: LucideIcon }[] = [
+  { key: "perf.1", icon: Zap },
+  { key: "perf.2", icon: CloudCog },
+  { key: "perf.3", icon: HardDrive },
+  { key: "perf.4", icon: Server },
+  { key: "perf.5", icon: Gauge },
+  { key: "perf.6", icon: Rocket },
+  { key: "perf.7", icon: TrendingUp },
+];
+
+export function Performance() {
+  const { t } = useI18n();
+  return (
+    <section className="bg-background py-20 lg:py-28">
+      <div className="mx-auto max-w-6xl px-5 lg:px-8">
+        <SectionHeading eyebrow={t("perf.eyebrow")} title={t("perf.title")} subtitle={t("perf.subtitle")} />
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {perf.map((p, i) => (
+            <Reveal key={p.key} delay={(i % 4) * 80}>
+              <article className="card-elevated h-full p-6">
+                <IconTile icon={p.icon} />
+                <h3 className="mt-5 text-base font-bold text-foreground">{t(`${p.key}.t`)}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(`${p.key}.d`)}</p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function Payment() {
+  const { t } = useI18n();
+  return (
+    <section id="payment" className="scroll-mt-20 border-y border-border surface-soft py-20 lg:py-24">
+      <div className="mx-auto max-w-3xl px-5 text-center lg:px-8">
+        <Reveal>
+          <div className="card-elevated mx-auto flex flex-col items-center gap-6 px-8 py-12">
+            <img
+              src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-200px.png"
+              alt="PayPal"
+              width={200}
+              height={52}
+              loading="lazy"
+              decoding="async"
+              className="h-9 w-auto"
+            />
+            <h2 className="text-2xl font-bold text-foreground sm:text-3xl">{t("pay.title")}</h2>
+            <p className="max-w-lg text-sm text-muted-foreground sm:text-base">{t("pay.subtitle")}</p>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+const trust = ["trust.1", "trust.2", "trust.3", "trust.4", "trust.5", "trust.6"];
+
+export function Trust() {
+  const { t } = useI18n();
+  return (
+    <section className="bg-background py-20 lg:py-24">
+      <div className="mx-auto max-w-6xl px-5 lg:px-8">
+        <SectionHeading title={t("trust.title")} subtitle={t("trust.subtitle")} />
+        <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {trust.map((item, i) => (
+            <Reveal as="li" key={item} delay={(i % 3) * 80}>
+              <div className="flex h-full items-center gap-3 rounded-2xl border border-border bg-secondary px-5 py-4">
+                <span className="inline-flex size-6 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                  <Check className="size-3.5" aria-hidden="true" />
+                </span>
+                <span className="text-sm font-semibold text-foreground">{t(item)}</span>
+              </div>
+            </Reveal>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
+export function FinalCta() {
+  const { t } = useI18n();
+  return (
+    <section className="bg-background pb-24">
+      <div className="mx-auto max-w-6xl px-5 lg:px-8">
+        <Reveal>
+          <div className="relative overflow-hidden rounded-[2rem] bg-[image:var(--gradient-brand)] px-8 py-16 text-center shadow-[var(--shadow-lift)] sm:px-16">
+            <h2 className="text-3xl font-extrabold text-primary-foreground sm:text-4xl">{t("cta.title")}</h2>
+            <p className="mx-auto mt-4 max-w-xl text-sm text-primary-foreground/85 sm:text-base">
+              {t("cta.subtitle")}
+            </p>
+            <a
+              href="#plans"
+              className="mt-9 inline-flex items-center gap-2 rounded-full bg-card px-7 py-3.5 text-sm font-bold text-primary transition-transform hover:-translate-y-0.5"
+            >
+              {t("cta.button")}
+            </a>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
