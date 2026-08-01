@@ -98,8 +98,7 @@ export function SiteHeader() {
             aria-expanded={open}
             className="inline-flex size-10 items-center justify-center rounded-full border border-border text-foreground lg:hidden"
           >
-            {open ? <Menu className="size-5" /> : <X className="size-5 rotate-45 opacity-0" />}
-            {open ? null : <Menu className="absolute size-5" />}
+            {open ? <X className="size-5" aria-hidden="true" /> : <Menu className="size-5" aria-hidden="true" />}
           </button>
         </div>
       </div>
