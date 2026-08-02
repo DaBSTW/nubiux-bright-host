@@ -1,5 +1,6 @@
 import { ArrowRight, Check, ShieldCheck } from "lucide-react";
 import heroImage from "@/assets/hero-cloud.jpg";
+import mascotWave from "@/assets/mascot-wave.png";
 import { useI18n } from "@/lib/i18n";
 import { Reveal } from "./Reveal";
 
@@ -84,6 +85,20 @@ export function Hero() {
               <p className="text-sm font-bold text-foreground">99.9%</p>
               <p className="text-xs text-muted-foreground">Uptime</p>
             </div>
+          </div>
+
+          <div className="pointer-events-none absolute -bottom-8 right-0 flex items-end gap-2 sm:-right-4">
+            <span className="mb-8 hidden rounded-2xl rounded-br-sm border border-border bg-card px-3 py-2 text-xs font-semibold text-foreground shadow-[var(--shadow-card)] sm:block">
+              {t("mascot.hero")}
+            </span>
+            <img
+              src={mascotWave}
+              alt={t("mascot.alt.wave")}
+              width={816}
+              height={816}
+              decoding="async"
+              className="h-32 w-32 drop-shadow-xl sm:h-40 sm:w-40"
+            />
           </div>
         </Reveal>
       </div>
