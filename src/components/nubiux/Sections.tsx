@@ -1,18 +1,15 @@
 import {
   Activity,
-  BadgeCheck,
   Bug,
   Check,
   CloudCog,
   Database,
-  Download,
   FolderOpen,
   Gauge,
   Globe2,
   HardDrive,
   Headphones,
   KeyRound,
-  LayoutDashboard,
   Lock,
   Mail,
   MousePointerClick,
@@ -23,8 +20,6 @@ import {
   ServerCog,
   ShieldAlert,
   ShieldCheck,
-  Sparkles,
-  Timer,
   TrendingUp,
   Zap,
   type LucideIcon,
@@ -38,45 +33,6 @@ function IconTile({ icon: Icon }: { icon: LucideIcon }) {
     <span className="inline-flex size-11 items-center justify-center rounded-xl bg-accent text-accent-foreground">
       <Icon className="size-5" aria-hidden="true" />
     </span>
-  );
-}
-
-const licenses: { key: string; icon: LucideIcon }[] = [
-  { key: "lic.1", icon: LayoutDashboard },
-  { key: "lic.2", icon: MousePointerClick },
-  { key: "lic.3", icon: Download },
-  { key: "lic.4", icon: Sparkles },
-  { key: "lic.5", icon: Lock },
-  { key: "lic.6", icon: RotateCcw },
-  { key: "lic.7", icon: Zap },
-  { key: "lic.8", icon: CloudCog },
-  { key: "lic.9", icon: ShieldAlert },
-  { key: "lic.10", icon: ServerCog },
-  { key: "lic.11", icon: Timer },
-  { key: "lic.12", icon: BadgeCheck },
-  { key: "lic.13", icon: RefreshCcw },
-  { key: "lic.14", icon: Headphones },
-];
-
-export function Licenses() {
-  const { t } = useI18n();
-  return (
-    <section id="licenses" className="scroll-mt-20 border-y border-border surface-soft py-20 lg:py-28">
-      <div className="mx-auto max-w-6xl px-5 lg:px-8">
-        <SectionHeading eyebrow={t("lic.eyebrow")} title={t("lic.title")} subtitle={t("lic.subtitle")} />
-        <ul className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {licenses.map((l, i) => (
-            <Reveal as="li" key={l.key} delay={(i % 3) * 80}>
-              <div className="card-elevated flex h-full items-center gap-4 px-5 py-4.5">
-                <IconTile icon={l.icon} />
-                <span className="text-sm font-semibold text-foreground">{t(l.key)}</span>
-                <Check className="ml-auto size-4 shrink-0 text-primary" aria-hidden="true" />
-              </div>
-            </Reveal>
-          ))}
-        </ul>
-      </div>
-    </section>
   );
 }
 

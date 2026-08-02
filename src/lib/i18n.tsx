@@ -6,7 +6,6 @@ type Dict = Record<string, string | string[]>;
 
 const en: Dict = {
   "nav.plans": "Plans",
-  "nav.licenses": "Licenses",
   "nav.features": "Features",
   "nav.security": "Security",
   "nav.faq": "FAQ",
@@ -47,24 +46,6 @@ const en: Dict = {
   "plans.f.support": "24/7 Support",
   "plans.f.priority": "Priority Support",
 
-  "lic.eyebrow": "Premium Licenses",
-  "lic.title": "Enterprise software, included",
-  "lic.subtitle":
-    "These technologies are what allow us to deliver professional, fast and secure hosting — fully licensed, always updated and installed for free.",
-  "lic.1": "cPanel VPS License",
-  "lic.2": "Softaculous License",
-  "lic.3": "Backuply License",
-  "lic.4": "SitePad License",
-  "lic.5": "FleetSSL License",
-  "lic.6": "JetBackup License",
-  "lic.7": "LiteSpeed 4 Core License",
-  "lic.8": "CloudLinux License",
-  "lic.9": "Imunify360 License",
-  "lic.10": "KernelCare License",
-  "lic.11": "Instant Activation",
-  "lic.12": "Free Installation",
-  "lic.13": "Official Updates",
-  "lic.14": "Free License Support",
 
   "why.eyebrow": "Why Nubiux",
   "why.title": "Built for performance you can feel",
@@ -186,7 +167,6 @@ const en: Dict = {
 
 const es: Dict = {
   "nav.plans": "Planes",
-  "nav.licenses": "Licencias",
   "nav.features": "Características",
   "nav.security": "Seguridad",
   "nav.faq": "Preguntas",
@@ -227,24 +207,6 @@ const es: Dict = {
   "plans.f.support": "Soporte 24/7",
   "plans.f.priority": "Soporte Prioritario",
 
-  "lic.eyebrow": "Licencias Premium",
-  "lic.title": "Software empresarial incluido",
-  "lic.subtitle":
-    "Estas tecnologías son las que nos permiten ofrecer un hosting profesional, rápido y seguro — con licencias oficiales, siempre actualizadas e instaladas gratis.",
-  "lic.1": "Licencia cPanel VPS",
-  "lic.2": "Licencia Softaculous",
-  "lic.3": "Licencia Backuply",
-  "lic.4": "Licencia SitePad",
-  "lic.5": "Licencia FleetSSL",
-  "lic.6": "Licencia JetBackup",
-  "lic.7": "Licencia LiteSpeed 4 Core",
-  "lic.8": "Licencia CloudLinux",
-  "lic.9": "Licencia Imunify360",
-  "lic.10": "Licencia KernelCare",
-  "lic.11": "Activación Instantánea",
-  "lic.12": "Instalación Gratuita",
-  "lic.13": "Actualizaciones Oficiales",
-  "lic.14": "Soporte de Licencias Gratis",
 
   "why.eyebrow": "Por qué Nubiux",
   "why.title": "Rendimiento que se nota",

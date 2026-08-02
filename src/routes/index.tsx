@@ -6,7 +6,6 @@ import { Plans } from "@/components/nubiux/Plans";
 import {
   CPanelSection,
   FinalCta,
-  Licenses,
   Payment,
   Performance,
   Security,
@@ -103,7 +102,6 @@ function Index() {
       <main>
         <Hero />
         <Plans />
-        <Licenses />
         <WhyNubiux />
         <CPanelSection />
         <Softaculous />
