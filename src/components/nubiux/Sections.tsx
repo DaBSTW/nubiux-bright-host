@@ -27,6 +27,13 @@ import {
 import cpanelImage from "@/assets/cpanel-dashboard.jpg";
 import mascotShield from "@/assets/mascot-shield.png";
 import mascotServer from "@/assets/mascot-server.png";
+import wordpressLogo from "@/assets/apps/wordpress.svg";
+import joomlaLogo from "@/assets/apps/joomla.svg";
+import drupalLogo from "@/assets/apps/drupal.svg";
+import prestashopLogo from "@/assets/apps/prestashop.svg";
+import woocommerceLogo from "@/assets/apps/woocommerce.svg";
+import phpbbLogo from "@/assets/apps/phpbb.svg";
+import laravelLogo from "@/assets/apps/laravel.svg";
 import { useI18n } from "@/lib/i18n";
 import { Reveal, SectionHeading } from "./Reveal";
 
@@ -119,7 +126,15 @@ export function CPanelSection() {
   );
 }
 
-const apps = ["WordPress", "Joomla", "Drupal", "PrestaShop", "Magento", "phpBB", "Laravel"];
+const apps: { name: string; logo: string }[] = [
+  { name: "WordPress", logo: wordpressLogo },
+  { name: "Joomla", logo: joomlaLogo },
+  { name: "Drupal", logo: drupalLogo },
+  { name: "PrestaShop", logo: prestashopLogo },
+  { name: "WooCommerce", logo: woocommerceLogo },
+  { name: "phpBB", logo: phpbbLogo },
+  { name: "Laravel", logo: laravelLogo },
+];
 
 export function Softaculous() {
   const { t } = useI18n();
@@ -129,12 +144,20 @@ export function Softaculous() {
         <SectionHeading eyebrow={t("soft.eyebrow")} title={t("soft.title")} subtitle={t("soft.subtitle")} />
         <ul className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-7">
           {apps.map((app, i) => (
-            <Reveal as="li" key={app} delay={i * 60}>
+            <Reveal as="li" key={app.name} delay={i * 60}>
               <div className="card-elevated flex h-full flex-col items-center gap-3 px-4 py-6 text-center">
-                <span className="inline-flex size-12 items-center justify-center rounded-2xl bg-accent text-base font-bold text-accent-foreground">
-                  {app.slice(0, 2)}
+                <span className="inline-flex size-12 items-center justify-center rounded-2xl bg-accent">
+                  <img
+                    src={app.logo}
+                    alt={`${app.name} logo`}
+                    width={28}
+                    height={28}
+                    loading="lazy"
+                    decoding="async"
+                    className="size-7"
+                  />
                 </span>
-                <span className="text-sm font-semibold text-foreground">{app}</span>
+                <span className="text-sm font-semibold text-foreground">{app.name}</span>
               </div>
             </Reveal>
           ))}
