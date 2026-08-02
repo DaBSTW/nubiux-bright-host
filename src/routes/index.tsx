@@ -6,7 +6,6 @@ import { Plans } from "@/components/nubiux/Plans";
 import {
   CPanelSection,
   FinalCta,
-  Licenses,
   Payment,
   Performance,
   Security,
