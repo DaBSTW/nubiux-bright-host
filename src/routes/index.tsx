@@ -102,7 +102,6 @@ function Index() {
       <main>
         <Hero />
         <Plans />
-        <Licenses />
         <WhyNubiux />
         <CPanelSection />
         <Softaculous />
