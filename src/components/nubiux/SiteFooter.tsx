@@ -1,4 +1,5 @@
 import logo from "@/assets/nubiux-logo.png";
+import mascotWave from "@/assets/mascot-wave.png";
 import { useI18n } from "@/lib/i18n";
 
 export function SiteFooter() {
@@ -20,6 +21,20 @@ export function SiteFooter() {
               <span className="text-base font-bold text-foreground">Nubiux</span>
             </div>
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">{t("footer.tagline")}</p>
+            <div className="mt-6 flex items-center gap-3">
+              <img
+                src={mascotWave}
+                alt={t("mascot.alt.wave")}
+                width={816}
+                height={816}
+                loading="lazy"
+                decoding="async"
+                className="h-20 w-20"
+              />
+              <span className="rounded-2xl border border-border bg-card px-3 py-2 text-xs font-semibold text-foreground">
+                {t("mascot.footer")}
+              </span>
+            </div>
           </div>
 
           {columns.map((col) => (

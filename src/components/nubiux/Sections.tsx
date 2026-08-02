@@ -25,6 +25,8 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import cpanelImage from "@/assets/cpanel-dashboard.jpg";
+import mascotShield from "@/assets/mascot-shield.png";
+import mascotServer from "@/assets/mascot-server.png";
 import { useI18n } from "@/lib/i18n";
 import { Reveal, SectionHeading } from "./Reveal";
 
@@ -158,6 +160,20 @@ export function Security() {
     <section id="security" className="scroll-mt-20 border-y border-border surface-soft py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-5 lg:px-8">
         <SectionHeading eyebrow={t("sec.eyebrow")} title={t("sec.title")} subtitle={t("sec.subtitle")} />
+        <Reveal className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+          <img
+            src={mascotShield}
+            alt={t("mascot.alt.shield")}
+            width={816}
+            height={816}
+            loading="lazy"
+            decoding="async"
+            className="h-32 w-32 drop-shadow-xl sm:h-40 sm:w-40"
+          />
+          <span className="rounded-2xl border border-border bg-card px-4 py-2.5 text-sm font-semibold text-foreground shadow-[var(--shadow-card)]">
+            {t("mascot.security")}
+          </span>
+        </Reveal>
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {security.map((s, i) => (
             <Reveal key={s.key} delay={(i % 4) * 80}>
@@ -263,6 +279,15 @@ export function FinalCta() {
       <div className="mx-auto max-w-6xl px-5 lg:px-8">
         <Reveal>
           <div className="relative overflow-hidden rounded-[2rem] bg-[image:var(--gradient-brand)] px-8 py-16 text-center shadow-[var(--shadow-lift)] sm:px-16">
+            <img
+              src={mascotServer}
+              alt={t("mascot.alt.server")}
+              width={816}
+              height={816}
+              loading="lazy"
+              decoding="async"
+              className="mx-auto mb-6 h-32 w-32 drop-shadow-xl sm:h-40 sm:w-40"
+            />
             <h2 className="text-3xl font-extrabold text-primary-foreground sm:text-4xl">{t("cta.title")}</h2>
             <p className="mx-auto mt-4 max-w-xl text-sm text-primary-foreground/85 sm:text-base">
               {t("cta.subtitle")}

@@ -163,6 +163,14 @@ const en: Dict = {
   "footer.contact": "Contact",
   "footer.rights": "© Nubiux. All Rights Reserved.",
   "lang.label": "Language",
+
+  "mascot.name": "Nubi",
+  "mascot.hero": "Hi! I'm Nubi, your hosting buddy.",
+  "mascot.alt.wave": "Nubi, the Nubiux capybara mascot, waving with a headset",
+  "mascot.alt.shield": "Nubi, the Nubiux capybara mascot, holding a security shield",
+  "mascot.alt.server": "Nubi, the Nubiux capybara mascot, hugging a server",
+  "mascot.security": "I keep your site safe 24/7.",
+  "mascot.footer": "See you in the cloud!",
 };
 
 const es: Dict = {
@@ -324,6 +332,14 @@ const es: Dict = {
   "footer.contact": "Contacto",
   "footer.rights": "© Nubiux. Todos los derechos reservados.",
   "lang.label": "Idioma",
+
+  "mascot.name": "Nubi",
+  "mascot.hero": "¡Hola! Soy Nubi, tu compañero de hosting.",
+  "mascot.alt.wave": "Nubi, la mascota capibara de Nubiux, saludando con auriculares",
+  "mascot.alt.shield": "Nubi, la mascota capibara de Nubiux, con un escudo de seguridad",
+  "mascot.alt.server": "Nubi, la mascota capibara de Nubiux, abrazando un servidor",
+  "mascot.security": "Cuido tu sitio 24/7.",
+  "mascot.footer": "¡Nos vemos en la nube!",
 };
 
 const dicts: Record<Lang, Dict> = { en, es };
