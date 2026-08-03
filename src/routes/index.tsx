@@ -13,6 +13,7 @@ import {
   Trust,
   WhyNubiux,
 } from "@/components/nubiux/Sections";
+import { Reviews } from "@/components/nubiux/Reviews";
 import { Faq } from "@/components/nubiux/Faq";
 import { SiteFooter } from "@/components/nubiux/SiteFooter";
 
@@ -107,6 +108,7 @@ function Index() {
         <Softaculous />
         <Security />
         <Performance />
+        <Reviews />
         <Faq />
         <Payment />
         <Trust />

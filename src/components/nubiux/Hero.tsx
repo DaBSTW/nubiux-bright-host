@@ -17,14 +17,8 @@ export function Hero() {
       />
       <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-5 pt-16 pb-20 sm:pt-24 lg:grid-cols-2 lg:gap-10 lg:px-8 lg:pb-28">
         <div>
-          <Reveal>
-            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1.5 text-xs font-semibold text-primary shadow-[var(--shadow-card)]">
-              <ShieldCheck className="size-3.5" aria-hidden="true" />
-              {t("hero.eyebrow")}
-            </span>
-          </Reveal>
           <Reveal delay={80}>
-            <h1 className="mt-6 text-4xl leading-[1.08] font-extrabold text-foreground sm:text-5xl lg:text-[3.4rem]">
+            <h1 className=" text-4xl leading-[1.08] font-extrabold text-foreground sm:text-5xl lg:text-[3.4rem]">
               {t("hero.title.a")}{" "}
               <span className="bg-[image:var(--gradient-brand)] bg-clip-text text-transparent">
                 {t("hero.title.b")}

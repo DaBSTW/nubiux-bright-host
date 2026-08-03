@@ -24,7 +24,7 @@ export function Plans() {
   return (
     <section id="plans" className="scroll-mt-20 bg-background py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-5 lg:px-8">
-        <SectionHeading eyebrow={t("plans.eyebrow")} title={t("plans.title")} subtitle={t("plans.subtitle")} />
+        <SectionHeading title={t("plans.title")} subtitle={t("plans.subtitle")} />
 
         <div className="mt-14 grid gap-6 md:grid-cols-3 lg:gap-7">
           {plans.map((plan, i) => (

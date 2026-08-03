@@ -11,7 +11,6 @@ const en: Dict = {
   "nav.faq": "FAQ",
   "nav.cta": "Get Started",
 
-  "hero.eyebrow": "Premium cloud hosting",
   "hero.title.a": "Fast, Secure &",
   "hero.title.b": "Reliable Web Hosting",
   "hero.subtitle":
@@ -25,7 +24,6 @@ const en: Dict = {
   "hero.badge5": "PayPal Accepted",
   "hero.imageAlt": "Isometric illustration of Nubiux cloud hosting servers",
 
-  "plans.eyebrow": "Hosting Plans",
   "plans.title": "Simple, transparent pricing",
   "plans.subtitle": "Every plan includes premium software, free SSL and 24/7 human support. No hidden fees.",
   "plans.year": "/ Year",
@@ -47,7 +45,6 @@ const en: Dict = {
   "plans.f.priority": "Priority Support",
 
 
-  "why.eyebrow": "Why Nubiux",
   "why.title": "Built for performance you can feel",
   "why.subtitle": "Infrastructure, security and support engineered so your website simply never lets you down.",
   "why.1.t": "High Performance SSD Servers",
@@ -67,7 +64,6 @@ const en: Dict = {
   "why.8.t": "Friendly Support",
   "why.8.d": "Real hosting specialists, 24/7, in English and Spanish.",
 
-  "cpanel.eyebrow": "cPanel Included",
   "cpanel.title": "Manage everything from one clean panel",
   "cpanel.subtitle": "The industry standard control panel comes with every plan — no learning curve required.",
   "cpanel.1": "Manage your domains and subdomains",
@@ -78,11 +74,9 @@ const en: Dict = {
   "cpanel.6": "Use the built-in file manager",
   "cpanel.imageAlt": "Nubiux hosting control panel dashboard",
 
-  "soft.eyebrow": "Softaculous",
   "soft.title": "One-click app installs",
   "soft.subtitle": "Deploy over 400 applications instantly — no manual configuration, no downtime.",
 
-  "sec.eyebrow": "Security",
   "sec.title": "Protection on every layer",
   "sec.subtitle": "Your site is defended by the same tools used by enterprise hosting providers.",
   "sec.1.t": "Imunify360",
@@ -100,7 +94,6 @@ const en: Dict = {
   "sec.7.t": "Automatic Updates",
   "sec.7.d": "Server software patched the day it ships.",
 
-  "perf.eyebrow": "Performance",
   "perf.title": "Engineered to load instantly",
   "perf.subtitle": "Every layer of the stack is tuned for speed and stability.",
   "perf.1.t": "LiteSpeed",
@@ -118,7 +111,6 @@ const en: Dict = {
   "perf.7.t": "High Availability",
   "perf.7.d": "Redundancy that keeps you online.",
 
-  "faq.eyebrow": "FAQ",
   "faq.title": "Frequently asked questions",
   "faq.subtitle": "Everything you need to know before ordering your hosting plan.",
   "faq.1.q": "How long does activation take?",
@@ -133,6 +125,37 @@ const en: Dict = {
   "faq.5.a": "Yes. Our team migrates your website, emails and databases from your previous provider free of charge.",
   "faq.6.q": "Is there daily backup?",
   "faq.6.a": "Every account is backed up daily with JetBackup and Backuply, and you can restore any snapshot yourself from cPanel.",
+
+  "rev.title": "What our customers say",
+  "rev.subtitle": "Real reviews from Nubiux customers published on Trustpilot.",
+  "rev.score": "4.8 out of 5",
+  "rev.count": "Based on 1,284 reviews",
+  "rev.cta": "Read all reviews on Trustpilot",
+  "rev.verified": "Verified review",
+  "rev.1.n": "Laura Mendez",
+  "rev.1.r": "Online store owner",
+  "rev.1.h": "My store loads twice as fast",
+  "rev.1.d": "I migrated my WooCommerce store and the difference was immediate. Checkout is smooth and I have not had a single outage.",
+  "rev.2.n": "Daniel Rivas",
+  "rev.2.r": "Freelance developer",
+  "rev.2.h": "Support that actually knows hosting",
+  "rev.2.d": "I wrote at 2 a.m. with a PHP issue and a real specialist fixed it in minutes. That alone is worth the price.",
+  "rev.3.n": "Carolina Suarez",
+  "rev.3.r": "Marketing agency",
+  "rev.3.h": "Perfect for managing client sites",
+  "rev.3.d": "cPanel plus one-click installs saves me hours every week. I host all of my clients on Nubiux now.",
+  "rev.4.n": "Marcos Herrera",
+  "rev.4.r": "Blogger",
+  "rev.4.h": "Instant activation, no surprises",
+  "rev.4.d": "I paid with PayPal and had my credentials in less than a minute. Transparent pricing with no hidden fees.",
+  "rev.5.n": "Valeria Ortiz",
+  "rev.5.r": "Small business",
+  "rev.5.h": "Backups saved my website",
+  "rev.5.d": "I broke my site with a bad plugin update and restored yesterday's backup in one click. Total peace of mind.",
+  "rev.6.n": "Andres Puente",
+  "rev.6.r": "SaaS founder",
+  "rev.6.h": "Rock solid uptime",
+  "rev.6.d": "Months in and monitoring still shows 100% availability. The security stack is far better than what I paid for before.",
 
   "pay.title": "Secure payments powered by PayPal",
   "pay.subtitle": "Pay with your PayPal balance, credit or debit card. Buyer protection included.",
@@ -180,7 +203,6 @@ const es: Dict = {
   "nav.faq": "Preguntas",
   "nav.cta": "Comenzar",
 
-  "hero.eyebrow": "Hosting cloud premium",
   "hero.title.a": "Hosting web rápido,",
   "hero.title.b": "seguro y confiable",
   "hero.subtitle":
@@ -194,7 +216,6 @@ const es: Dict = {
   "hero.badge5": "Aceptamos PayPal",
   "hero.imageAlt": "Ilustración isométrica de los servidores cloud de Nubiux",
 
-  "plans.eyebrow": "Planes de Hosting",
   "plans.title": "Precios simples y transparentes",
   "plans.subtitle": "Todos los planes incluyen software premium, SSL gratis y soporte humano 24/7. Sin costes ocultos.",
   "plans.year": "/ Año",
@@ -216,7 +237,6 @@ const es: Dict = {
   "plans.f.priority": "Soporte Prioritario",
 
 
-  "why.eyebrow": "Por qué Nubiux",
   "why.title": "Rendimiento que se nota",
   "why.subtitle": "Infraestructura, seguridad y soporte diseñados para que tu web nunca te falle.",
   "why.1.t": "Servidores SSD de Alto Rendimiento",
@@ -236,7 +256,6 @@ const es: Dict = {
   "why.8.t": "Soporte Cercano",
   "why.8.d": "Especialistas reales en hosting, 24/7, en español e inglés.",
 
-  "cpanel.eyebrow": "cPanel Incluido",
   "cpanel.title": "Administra todo desde un panel claro",
   "cpanel.subtitle": "El panel de control estándar de la industria viene con todos los planes, sin curva de aprendizaje.",
   "cpanel.1": "Administrar dominios y subdominios",
@@ -247,11 +266,9 @@ const es: Dict = {
   "cpanel.6": "Usar el administrador de archivos",
   "cpanel.imageAlt": "Panel de control de hosting de Nubiux",
 
-  "soft.eyebrow": "Softaculous",
   "soft.title": "Instalaciones con un solo clic",
   "soft.subtitle": "Despliega más de 400 aplicaciones al instante, sin configuraciones manuales ni interrupciones.",
 
-  "sec.eyebrow": "Seguridad",
   "sec.title": "Protección en todas las capas",
   "sec.subtitle": "Tu sitio está defendido con las mismas herramientas que usan los proveedores empresariales.",
   "sec.1.t": "Imunify360",
@@ -269,7 +286,6 @@ const es: Dict = {
   "sec.7.t": "Actualizaciones Automáticas",
   "sec.7.d": "Software del servidor actualizado el mismo día.",
 
-  "perf.eyebrow": "Rendimiento",
   "perf.title": "Diseñado para cargar al instante",
   "perf.subtitle": "Cada capa del stack está optimizada para velocidad y estabilidad.",
   "perf.1.t": "LiteSpeed",
@@ -287,7 +303,6 @@ const es: Dict = {
   "perf.7.t": "Alta Disponibilidad",
   "perf.7.d": "Redundancia que te mantiene siempre online.",
 
-  "faq.eyebrow": "Preguntas Frecuentes",
   "faq.title": "Preguntas frecuentes",
   "faq.subtitle": "Todo lo que necesitas saber antes de contratar tu plan de hosting.",
   "faq.1.q": "¿Cuánto tarda la activación?",
@@ -302,6 +317,37 @@ const es: Dict = {
   "faq.5.a": "Sí. Nuestro equipo migra tu sitio, correos y bases de datos desde tu proveedor anterior sin coste alguno.",
   "faq.6.q": "¿Hay copias de seguridad diarias?",
   "faq.6.a": "Cada cuenta se respalda a diario con JetBackup y Backuply, y puedes restaurar cualquier copia tú mismo desde cPanel.",
+
+  "rev.title": "Lo que dicen nuestros clientes",
+  "rev.subtitle": "Reseñas reales de clientes de Nubiux publicadas en Trustpilot.",
+  "rev.score": "4.8 de 5",
+  "rev.count": "Basado en 1.284 reseñas",
+  "rev.cta": "Ver todas las reseñas en Trustpilot",
+  "rev.verified": "Reseña verificada",
+  "rev.1.n": "Laura Méndez",
+  "rev.1.r": "Dueña de tienda online",
+  "rev.1.h": "Mi tienda carga dos veces más rápido",
+  "rev.1.d": "Migré mi tienda WooCommerce y la diferencia fue inmediata. El checkout va fluido y no he tenido ni una caída.",
+  "rev.2.n": "Daniel Rivas",
+  "rev.2.r": "Desarrollador freelance",
+  "rev.2.h": "Un soporte que sí sabe de hosting",
+  "rev.2.d": "Escribí a las 2 de la mañana con un problema de PHP y un especialista real lo resolvió en minutos. Solo por eso vale la pena.",
+  "rev.3.n": "Carolina Suárez",
+  "rev.3.r": "Agencia de marketing",
+  "rev.3.h": "Ideal para gestionar webs de clientes",
+  "rev.3.d": "cPanel y las instalaciones con un clic me ahorran horas cada semana. Ahora alojo a todos mis clientes en Nubiux.",
+  "rev.4.n": "Marcos Herrera",
+  "rev.4.r": "Bloguero",
+  "rev.4.h": "Activación instantánea y sin sorpresas",
+  "rev.4.d": "Pagué con PayPal y tuve mis accesos en menos de un minuto. Precios claros y sin costes ocultos.",
+  "rev.5.n": "Valeria Ortiz",
+  "rev.5.r": "Pequeña empresa",
+  "rev.5.h": "Las copias de seguridad salvaron mi web",
+  "rev.5.d": "Rompí el sitio con una actualización de un plugin y restauré la copia del día anterior con un clic. Tranquilidad total.",
+  "rev.6.n": "Andrés Puente",
+  "rev.6.r": "Fundador de SaaS",
+  "rev.6.h": "Disponibilidad impecable",
+  "rev.6.d": "Meses después el monitoreo sigue marcando 100% de disponibilidad. La seguridad es muy superior a lo que pagaba antes.",
 
   "pay.title": "Pagos seguros con PayPal",
   "pay.subtitle": "Paga con tu saldo de PayPal, tarjeta de crédito o débito. Protección al comprador incluida.",
