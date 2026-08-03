@@ -9,7 +9,7 @@ export function Faq() {
   return (
     <section id="faq" className="scroll-mt-20 border-t border-border surface-soft py-20 lg:py-28">
       <div className="mx-auto max-w-3xl px-5 lg:px-8">
-        <SectionHeading eyebrow={t("faq.eyebrow")} title={t("faq.title")} subtitle={t("faq.subtitle")} />
+        <SectionHeading title={t("faq.title")} subtitle={t("faq.subtitle")} />
         <Reveal delay={100} className="mt-12">
           <Accordion type="single" collapsible className="space-y-3">
             {items.map((item) => (

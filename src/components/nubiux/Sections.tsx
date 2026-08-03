@@ -61,7 +61,7 @@ export function WhyNubiux() {
   return (
     <section id="features" className="scroll-mt-20 bg-background py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-5 lg:px-8">
-        <SectionHeading eyebrow={t("why.eyebrow")} title={t("why.title")} subtitle={t("why.subtitle")} />
+        <SectionHeading title={t("why.title")} subtitle={t("why.subtitle")} />
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {why.map((w, i) => (
             <Reveal key={w.key} delay={(i % 4) * 80}>
@@ -95,7 +95,6 @@ export function CPanelSection() {
         <div>
           <SectionHeading
             align="left"
-            eyebrow={t("cpanel.eyebrow")}
             title={t("cpanel.title")}
             subtitle={t("cpanel.subtitle")}
           />
@@ -141,7 +140,7 @@ export function Softaculous() {
   return (
     <section className="bg-background py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-5 lg:px-8">
-        <SectionHeading eyebrow={t("soft.eyebrow")} title={t("soft.title")} subtitle={t("soft.subtitle")} />
+        <SectionHeading title={t("soft.title")} subtitle={t("soft.subtitle")} />
         <ul className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-7">
           {apps.map((app, i) => (
             <Reveal as="li" key={app.name} delay={i * 60}>
@@ -182,7 +181,7 @@ export function Security() {
   return (
     <section id="security" className="scroll-mt-20 border-y border-border surface-soft py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-5 lg:px-8">
-        <SectionHeading eyebrow={t("sec.eyebrow")} title={t("sec.title")} subtitle={t("sec.subtitle")} />
+        <SectionHeading title={t("sec.title")} subtitle={t("sec.subtitle")} />
         <Reveal className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
           <img
             src={mascotShield}
@@ -228,7 +227,7 @@ export function Performance() {
   return (
     <section className="bg-background py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-5 lg:px-8">
-        <SectionHeading eyebrow={t("perf.eyebrow")} title={t("perf.title")} subtitle={t("perf.subtitle")} />
+        <SectionHeading title={t("perf.title")} subtitle={t("perf.subtitle")} />
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {perf.map((p, i) => (
             <Reveal key={p.key} delay={(i % 4) * 80}>
