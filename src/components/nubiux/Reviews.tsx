@@ -1,5 +1,4 @@
 import { Star } from "lucide-react";
-import trustpilotLogo from "@/assets/trustpilot.svg";
 import { useI18n } from "@/lib/i18n";
 import { SectionHeading, Reveal } from "./Reveal";
 
@@ -17,20 +16,18 @@ function Stars({ size = "size-6" }: { size?: string }) {
   );
 }
 
+function TrustpilotMark({ className = "size-5" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="#00b67a" aria-hidden="true">
+      <path d="M17.227 16.67l2.19 6.742-7.413-5.388 5.223-1.354zM24 9.31h-9.165L12.005.589l-2.84 8.723L0 9.3l7.422 5.397-2.83 8.714 7.422-5.388 4.583-3.326L24 9.311z" />
+    </svg>
+  );
+}
+
 function TrustpilotWordmark({ className = "h-6" }: { className?: string }) {
   return (
     <span className={`inline-flex items-center gap-2 ${className}`}>
-      <span
-        className="inline-block size-5 bg-[#00b67a]"
-        style={{
-          maskImage: `url(${trustpilotLogo})`,
-          WebkitMaskImage: `url(${trustpilotLogo})`,
-          maskSize: "contain",
-          WebkitMaskSize: "contain",
-          maskRepeat: "no-repeat",
-          WebkitMaskRepeat: "no-repeat",
-        }}
-      />
+      <TrustpilotMark />
       <span className="text-lg font-bold tracking-tight text-foreground">Trustpilot</span>
     </span>
   );
@@ -68,18 +65,7 @@ export function Reviews() {
               <article className="card-elevated flex h-full flex-col gap-4 p-6">
                 <div className="flex items-center justify-between gap-3">
                   <Stars size="size-4" />
-                  <span
-                    className="inline-block size-4 bg-[#00b67a]"
-                    style={{
-                      maskImage: `url(${trustpilotLogo})`,
-                      WebkitMaskImage: `url(${trustpilotLogo})`,
-                      maskSize: "contain",
-                      WebkitMaskSize: "contain",
-                      maskRepeat: "no-repeat",
-                      WebkitMaskRepeat: "no-repeat",
-                    }}
-                    aria-hidden="true"
-                  />
+                  <TrustpilotMark className="size-4" />
                 </div>
                 <h3 className="text-base font-bold text-foreground">{t(`${r}.h`)}</h3>
                 <p className="flex-1 text-sm leading-relaxed text-muted-foreground">{t(`${r}.d`)}</p>
