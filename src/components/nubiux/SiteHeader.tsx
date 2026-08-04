@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Globe, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import logo from "@/assets/nubiux-logo.png";
 import { useI18n, type Lang } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
