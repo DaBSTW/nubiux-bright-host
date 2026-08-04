@@ -13,9 +13,30 @@ const base = [
 ];
 
 const plans = [
-  { key: "plans.basic", price: 35, features: ["plans.f.storage2", ...base, "plans.f.support"], popular: false },
-  { key: "plans.standard", price: 65, features: ["plans.f.storage5", ...base, "plans.f.support"], popular: true },
-  { key: "plans.premium", price: 120, features: ["plans.f.storage10", ...base, "plans.f.priority"], popular: false },
+  {
+    key: "plans.premium",
+    monthly: 10,
+    yearly: 100,
+    forKey: "plans.for.premium",
+    features: ["plans.f.storage10", ...base, "plans.f.support"],
+    popular: false,
+  },
+  {
+    key: "plans.pro",
+    monthly: 18,
+    yearly: 180,
+    forKey: "plans.for.pro",
+    features: ["plans.f.storage20", ...base, "plans.f.support"],
+    popular: true,
+  },
+  {
+    key: "plans.business",
+    monthly: 25,
+    yearly: 250,
+    forKey: "plans.for.business",
+    features: ["plans.f.storage30", ...base, "plans.f.priority"],
+    popular: false,
+  },
 ];
 
 export function Plans() {
@@ -43,9 +64,18 @@ export function Plans() {
                 ) : null}
 
                 <h3 className="text-lg font-bold text-foreground">{t(plan.key)}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{t(plan.forKey)}</p>
                 <p className="mt-4 flex items-end gap-1.5">
-                  <span className="text-5xl font-extrabold tracking-tight text-foreground">${plan.price}</span>
+                  <span className="text-5xl font-extrabold tracking-tight text-foreground">${plan.yearly}</span>
                   <span className="pb-1.5 text-sm font-medium text-muted-foreground">{t("plans.year")}</span>
+                </p>
+                <p className="mt-2 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+                  <span>
+                    ${plan.monthly} {t("plans.month")}
+                  </span>
+                  <span className="rounded-full bg-accent px-2.5 py-1 text-xs font-semibold text-accent-foreground">
+                    {t("plans.annualBadge")}
+                  </span>
                 </p>
 
                 <ul className="mt-7 flex-1 space-y-3.5 border-t border-border pt-7">
