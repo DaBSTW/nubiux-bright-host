@@ -17,27 +17,33 @@ function LangSwitch({ className }: { className?: string }) {
     { code: "en", label: "EN" },
     { code: "es", label: "ES" },
   ];
+  const activeIndex = options.findIndex((o) => o.code === lang);
   return (
     <div
-      className={cn("inline-flex items-center gap-0.5 rounded-full border border-border bg-secondary p-0.5", className)}
+      className={cn(
+        "relative inline-flex items-center rounded-full border border-border/70 bg-secondary/70 p-[3px] shadow-[inset_0_1px_0_hsl(0_0%_100%/0.06)] backdrop-blur",
+        className,
+      )}
       role="group"
       aria-label="Language selector"
     >
-      <Globe className="ml-1 size-3 text-muted-foreground" aria-hidden="true" />
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute left-[3px] top-[3px] h-[calc(100%-6px)] w-[calc(50%-3px)] rounded-full bg-primary shadow-[var(--shadow-card)] transition-transform duration-300 ease-out"
+        style={{ transform: `translateX(${activeIndex * 100}%)` }}
+      />
       {options.map((o) => (
         <button
           key={o.code}
           type="button"
           onClick={() => setLang(o.code)}
           aria-pressed={lang === o.code}
+          title={o.code === "en" ? "English" : "Español"}
           className={cn(
-            "rounded-full px-2 py-0.5 text-[11px] font-semibold leading-5 transition-colors",
-            lang === o.code
-              ? "bg-primary text-primary-foreground"
-              : "text-muted-foreground hover:text-foreground",
+            "relative z-10 flex-1 rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide transition-colors duration-200",
+            lang === o.code ? "text-primary-foreground" : "text-muted-foreground hover:text-foreground",
           )}
         >
-          {o.code === "en" ? "🇺🇸 " : "🇪🇸 "}
           {o.label}
         </button>
       ))}
