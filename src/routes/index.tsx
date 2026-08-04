@@ -19,7 +19,7 @@ import { SiteFooter } from "@/components/nubiux/SiteFooter";
 
 const TITLE = "Nubiux — Fast, Secure & Reliable Web Hosting";
 const DESCRIPTION =
-  "Premium SSD web hosting from $35/year with free SSL, cPanel, daily backups, LiteSpeed, Imunify360 and instant activation. PayPal accepted.";
+  "Premium SSD web hosting from $10/month or $100/year with free SSL, cPanel, daily backups, LiteSpeed, Imunify360 and instant activation. PayPal accepted.";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -55,9 +55,9 @@ export const Route = createFileRoute("/")({
               description: DESCRIPTION,
               brand: { "@type": "Brand", name: "Nubiux" },
               offers: [
-                { "@type": "Offer", name: "Basic Plan", price: "35", priceCurrency: "USD" },
-                { "@type": "Offer", name: "Standard Plan", price: "65", priceCurrency: "USD" },
-                { "@type": "Offer", name: "Premium Plan", price: "120", priceCurrency: "USD" },
+                { "@type": "Offer", name: "Premium Plan (annual)", price: "100", priceCurrency: "USD" },
+                { "@type": "Offer", name: "Pro Plan (annual)", price: "180", priceCurrency: "USD" },
+                { "@type": "Offer", name: "Business Plan (annual)", price: "250", priceCurrency: "USD" },
               ],
             },
             {
