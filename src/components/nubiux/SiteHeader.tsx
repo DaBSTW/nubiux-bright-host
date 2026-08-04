@@ -11,7 +11,7 @@ const links = [
   { href: "#faq", key: "nav.faq" },
 ];
 
-function LangSwitch() {
+function LangSwitch({ className }: { className?: string }) {
   const { lang, setLang } = useI18n();
   const options: { code: Lang; label: string }[] = [
     { code: "en", label: "EN" },
@@ -19,11 +19,11 @@ function LangSwitch() {
   ];
   return (
     <div
-      className="flex items-center gap-1 rounded-full border border-border bg-secondary p-1"
+      className={cn("inline-flex items-center gap-0.5 rounded-full border border-border bg-secondary p-0.5", className)}
       role="group"
       aria-label="Language selector"
     >
-      <Globe className="ml-1.5 size-3.5 text-muted-foreground" aria-hidden="true" />
+      <Globe className="ml-1 size-3 text-muted-foreground" aria-hidden="true" />
       {options.map((o) => (
         <button
           key={o.code}
@@ -31,7 +31,7 @@ function LangSwitch() {
           onClick={() => setLang(o.code)}
           aria-pressed={lang === o.code}
           className={cn(
-            "rounded-full px-2.5 py-1 text-xs font-semibold transition-colors",
+            "rounded-full px-2 py-0.5 text-[11px] font-semibold leading-5 transition-colors",
             lang === o.code
               ? "bg-primary text-primary-foreground"
               : "text-muted-foreground hover:text-foreground",
@@ -83,7 +83,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <LangSwitch />
+          <LangSwitch className="hidden lg:inline-flex" />
           <a
             href="#plans"
             className="hidden rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-card)] transition-transform hover:-translate-y-0.5 sm:inline-flex"
@@ -117,6 +117,9 @@ export function SiteHeader() {
               </li>
             ))}
           </ul>
+          <div className="mt-3 border-t border-border pt-3">
+            <LangSwitch />
+          </div>
         </nav>
       ) : null}
     </header>
