@@ -66,15 +66,15 @@ export function Plans() {
                 <h3 className="text-lg font-bold text-foreground">{t(plan.key)}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{t(plan.forKey)}</p>
                 <p className="mt-4 flex items-end gap-1.5">
-                  <span className="text-5xl font-extrabold tracking-tight text-foreground">${plan.yearly}</span>
-                  <span className="pb-1.5 text-sm font-medium text-muted-foreground">{t("plans.year")}</span>
+                  <span className="text-5xl font-extrabold tracking-tight text-foreground">${plan.monthly}</span>
+                  <span className="pb-1.5 text-sm font-medium text-muted-foreground">{t("plans.month")}</span>
                 </p>
                 <p className="mt-2 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
                   <span>
-                    ${plan.monthly} {t("plans.month")}
+                    {t("plans.orAnnual")} ${plan.yearly} {t("plans.year")}
                   </span>
                   <span className="rounded-full bg-accent px-2.5 py-1 text-xs font-semibold text-accent-foreground">
-                    {t("plans.annualBadge")}
+                    {t("plans.save")} {Math.round((1 - plan.yearly / (plan.monthly * 12)) * 100)}%
                   </span>
                 </p>
 
