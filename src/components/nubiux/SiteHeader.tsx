@@ -5,10 +5,10 @@ import { useI18n, type Lang } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 const links = [
-  { href: "#plans", key: "nav.plans" },
-  { href: "#features", key: "nav.features" },
-  { href: "#security", key: "nav.security" },
-  { href: "#faq", key: "nav.faq" },
+  { href: "/#plans", key: "nav.plans" },
+  { href: "/#features", key: "nav.features" },
+  { href: "/#security", key: "nav.security" },
+  { href: "/#faq", key: "nav.faq" },
 ];
 
 function LangSwitch({ className }: { className?: string }) {
@@ -71,7 +71,7 @@ export function SiteHeader() {
       )}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:h-18 lg:px-8">
-        <a href="#top" className="flex items-center gap-2.5">
+        <a href="/" className="flex items-center gap-2.5">
           <img src={logo} alt="Nubiux" width={32} height={32} className="size-8" />
           <span className="text-lg font-bold tracking-tight text-foreground">Nubiux</span>
         </a>
@@ -91,7 +91,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-3">
           <LangSwitch className="hidden lg:inline-flex" />
           <a
-            href="#plans"
+            href="/#plans"
             className="hidden rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-card)] transition-transform hover:-translate-y-0.5 sm:inline-flex"
           >
             {t("nav.cta")}
