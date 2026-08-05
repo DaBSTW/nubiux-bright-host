@@ -36,6 +36,7 @@ import phpbbLogo from "@/assets/apps/phpbb.svg";
 import laravelLogo from "@/assets/apps/laravel.svg";
 import { useI18n } from "@/lib/i18n";
 import { Reveal, SectionHeading } from "./Reveal";
+import { DecorDots, DecorGrid, DecorOrb } from "./Decor";
 
 function IconTile({ icon: Icon }: { icon: LucideIcon }) {
   return (
@@ -59,8 +60,11 @@ const why: { key: string; icon: LucideIcon }[] = [
 export function WhyNubiux() {
   const { t } = useI18n();
   return (
-    <section id="features" className="scroll-mt-20 bg-background py-20 lg:py-28">
-      <div className="mx-auto max-w-6xl px-5 lg:px-8">
+    <section id="features" className="relative isolate scroll-mt-20 overflow-hidden bg-background py-20 lg:py-28">
+      <DecorGrid className="opacity-70" />
+      <DecorOrb className="-left-24 top-10 size-72" soft />
+      <DecorOrb className="-right-20 bottom-0 size-80" />
+      <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
         <SectionHeading title={t("why.title")} subtitle={t("why.subtitle")} />
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {why.map((w, i) => (
@@ -90,8 +94,10 @@ const cpanelItems: { key: string; icon: LucideIcon }[] = [
 export function CPanelSection() {
   const { t } = useI18n();
   return (
-    <section className="border-y border-border surface-soft py-20 lg:py-28">
-      <div className="mx-auto grid max-w-6xl items-center gap-14 px-5 lg:grid-cols-2 lg:px-8">
+    <section className="relative isolate overflow-hidden border-y border-border surface-soft py-20 lg:py-28">
+      <DecorDots className="opacity-60" />
+      <DecorOrb className="-right-28 top-1/4 size-96" soft />
+      <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-5 lg:grid-cols-2 lg:px-8">
         <div>
           <SectionHeading
             align="left"
@@ -138,8 +144,10 @@ const apps: { name: string; logo: string }[] = [
 export function Softaculous() {
   const { t } = useI18n();
   return (
-    <section className="bg-background py-20 lg:py-28">
-      <div className="mx-auto max-w-6xl px-5 lg:px-8">
+    <section className="relative isolate overflow-hidden bg-background py-20 lg:py-28">
+      <DecorOrb className="left-1/2 top-0 size-[26rem] -translate-x-1/2" soft />
+      <DecorDots className="opacity-50" />
+      <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
         <SectionHeading title={t("soft.title")} subtitle={t("soft.subtitle")} />
         <ul className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-7">
           {apps.map((app, i) => (
@@ -179,8 +187,13 @@ const security: { key: string; icon: LucideIcon }[] = [
 export function Security() {
   const { t } = useI18n();
   return (
-    <section id="security" className="scroll-mt-20 border-y border-border surface-soft py-20 lg:py-28">
-      <div className="mx-auto max-w-6xl px-5 lg:px-8">
+    <section
+      id="security"
+      className="relative isolate scroll-mt-20 overflow-hidden border-y border-border surface-soft py-20 lg:py-28"
+    >
+      <DecorGrid className="opacity-60" />
+      <DecorOrb className="-left-24 top-1/3 size-80" />
+      <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
         <SectionHeading title={t("sec.title")} subtitle={t("sec.subtitle")} />
         <Reveal className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
           <img
@@ -225,8 +238,11 @@ const perf: { key: string; icon: LucideIcon }[] = [
 export function Performance() {
   const { t } = useI18n();
   return (
-    <section className="bg-background py-20 lg:py-28">
-      <div className="mx-auto max-w-6xl px-5 lg:px-8">
+    <section className="relative isolate overflow-hidden bg-background py-20 lg:py-28">
+      <DecorDots className="opacity-60" />
+      <DecorOrb className="-right-24 top-8 size-80" soft />
+      <DecorOrb className="-left-16 bottom-4 size-72" />
+      <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
         <SectionHeading title={t("perf.title")} subtitle={t("perf.subtitle")} />
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {perf.map((p, i) => (
@@ -247,8 +263,13 @@ export function Performance() {
 export function Payment() {
   const { t } = useI18n();
   return (
-    <section id="payment" className="scroll-mt-20 border-y border-border surface-soft py-20 lg:py-24">
-      <div className="mx-auto max-w-3xl px-5 text-center lg:px-8">
+    <section
+      id="payment"
+      className="relative isolate scroll-mt-20 overflow-hidden border-y border-border surface-soft py-20 lg:py-24"
+    >
+      <DecorGrid className="opacity-70" />
+      <DecorOrb className="left-1/2 top-1/2 size-[28rem] -translate-x-1/2 -translate-y-1/2" soft />
+      <div className="relative mx-auto max-w-3xl px-5 text-center lg:px-8">
         <Reveal>
           <div className="card-elevated mx-auto flex flex-col items-center gap-6 px-8 py-12">
             <img
@@ -274,8 +295,10 @@ const trust = ["trust.1", "trust.2", "trust.3", "trust.4", "trust.5", "trust.6"]
 export function Trust() {
   const { t } = useI18n();
   return (
-    <section className="bg-background py-20 lg:py-24">
-      <div className="mx-auto max-w-6xl px-5 lg:px-8">
+    <section className="relative isolate overflow-hidden bg-background py-20 lg:py-24">
+      <DecorDots className="opacity-50" />
+      <DecorOrb className="-right-20 top-1/4 size-72" />
+      <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
         <SectionHeading title={t("trust.title")} subtitle={t("trust.subtitle")} />
         <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {trust.map((item, i) => (
@@ -297,8 +320,9 @@ export function Trust() {
 export function FinalCta() {
   const { t } = useI18n();
   return (
-    <section className="bg-background pb-24">
-      <div className="mx-auto max-w-6xl px-5 lg:px-8">
+    <section className="relative isolate overflow-hidden bg-background pb-24">
+      <DecorOrb className="-left-24 bottom-0 size-80" soft />
+      <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
         <Reveal>
           <div className="relative overflow-hidden rounded-[2rem] bg-[image:var(--gradient-brand)] px-8 py-16 text-center shadow-[var(--shadow-lift)] sm:px-16">
             <img
