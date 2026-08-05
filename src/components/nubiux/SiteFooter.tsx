@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import logo from "@/assets/nubiux-logo.png";
 import mascotWave from "@/assets/mascot-wave.png";
 import { useI18n } from "@/lib/i18n";
@@ -5,10 +6,31 @@ import { useI18n } from "@/lib/i18n";
 export function SiteFooter() {
   const { t } = useI18n();
 
-  const columns = [
-    { title: "footer.company", links: ["footer.about", "footer.contact"] },
-    { title: "footer.product", links: ["footer.hosting", "footer.pricing", "footer.faq"] },
-    { title: "footer.legal", links: ["footer.privacy", "footer.terms"] },
+  const columns: { title: string; links: { key: string; to: string }[] }[] = [
+    {
+      title: "footer.company",
+      links: [
+        { key: "footer.about", to: "/#features" },
+        { key: "footer.contact", to: "/#payment" },
+      ],
+    },
+    {
+      title: "footer.product",
+      links: [
+        { key: "footer.hosting", to: "/#plans" },
+        { key: "footer.pricing", to: "/#plans" },
+        { key: "footer.faq", to: "/#faq" },
+      ],
+    },
+    {
+      title: "footer.legal",
+      links: [
+        { key: "footer.terms", to: "/terms" },
+        { key: "footer.privacy", to: "/privacy" },
+        { key: "footer.cookies", to: "/cookies" },
+        { key: "footer.refunds", to: "/refunds" },
+      ],
+    },
   ];
 
   return (
@@ -41,16 +63,27 @@ export function SiteFooter() {
             <nav key={col.title} aria-label={t(col.title)}>
               <h3 className="text-sm font-bold text-foreground">{t(col.title)}</h3>
               <ul className="mt-4 space-y-2.5">
-                {col.links.map((l) => (
-                  <li key={l}>
-                    <a
-                      href={l === "footer.faq" ? "#faq" : l === "footer.pricing" ? "#plans" : "#top"}
-                      className="text-sm text-muted-foreground transition-colors hover:text-primary"
-                    >
-                      {t(l)}
-                    </a>
-                  </li>
-                ))}
+                {col.links.map((l) =>
+                  l.to.startsWith("/#") ? (
+                    <li key={l.key}>
+                      <a
+                        href={l.to}
+                        className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                      >
+                        {t(l.key)}
+                      </a>
+                    </li>
+                  ) : (
+                    <li key={l.key}>
+                      <Link
+                        to={l.to}
+                        className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                      >
+                        {t(l.key)}
+                      </Link>
+                    </li>
+                  ),
+                )}
               </ul>
             </nav>
           ))}
