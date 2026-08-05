@@ -1,6 +1,7 @@
 import { Star } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { SectionHeading, Reveal } from "./Reveal";
+import { DecorDots, DecorOrb } from "./Decor";
 
 const reviews = ["rev.1", "rev.2", "rev.3", "rev.4", "rev.5", "rev.6"];
 
@@ -37,8 +38,14 @@ export function Reviews() {
   const { t } = useI18n();
 
   return (
-    <section id="reviews" className="scroll-mt-20 border-y border-border surface-soft py-20 lg:py-28">
-      <div className="mx-auto max-w-6xl px-5 lg:px-8">
+    <section
+      id="reviews"
+      className="relative isolate scroll-mt-20 overflow-hidden border-y border-border surface-soft py-20 lg:py-28"
+    >
+      <DecorDots className="opacity-60" />
+      <DecorOrb className="-left-24 top-16 size-80" soft />
+      <DecorOrb className="-right-20 bottom-8 size-72" />
+      <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
         <SectionHeading title={t("rev.title")} subtitle={t("rev.subtitle")} />
 
         <Reveal delay={80} className="mx-auto mt-10 flex max-w-xl flex-col items-center gap-4">

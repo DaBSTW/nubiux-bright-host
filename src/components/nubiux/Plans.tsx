@@ -2,6 +2,7 @@ import { Check, Star } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { Reveal, SectionHeading } from "./Reveal";
+import { DecorGrid, DecorOrb } from "./Decor";
 
 const base = [
   "plans.f.ssl",
@@ -43,8 +44,11 @@ export function Plans() {
   const { t } = useI18n();
 
   return (
-    <section id="plans" className="scroll-mt-20 bg-background py-20 lg:py-28">
-      <div className="mx-auto max-w-6xl px-5 lg:px-8">
+    <section id="plans" className="relative isolate scroll-mt-20 overflow-hidden bg-background py-20 lg:py-28">
+      <DecorGrid className="opacity-70" />
+      <DecorOrb className="left-1/2 top-0 size-[30rem] -translate-x-1/2" soft />
+      <DecorOrb className="-right-24 bottom-10 size-80" />
+      <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
         <SectionHeading title={t("plans.title")} subtitle={t("plans.subtitle")} />
 
         <div className="mt-14 grid gap-6 md:grid-cols-3 lg:gap-7">
