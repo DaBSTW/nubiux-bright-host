@@ -1,14 +1,18 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useI18n } from "@/lib/i18n";
 import { Reveal, SectionHeading } from "./Reveal";
+import { DecorGrid, DecorOrb } from "./Decor";
 
 const items = ["faq.1", "faq.2", "faq.3", "faq.4", "faq.5", "faq.6"];
 
 export function Faq() {
   const { t } = useI18n();
   return (
-    <section id="faq" className="scroll-mt-20 border-t border-border surface-soft py-20 lg:py-28">
-      <div className="mx-auto max-w-3xl px-5 lg:px-8">
+    <section id="faq" className="relative isolate scroll-mt-20 overflow-hidden border-t border-border surface-soft py-20 lg:py-28">
+      <DecorGrid className="opacity-60" />
+      <DecorOrb className="-right-28 top-1/3 size-96" soft />
+      <DecorOrb className="-left-24 bottom-6 size-72" />
+      <div className="relative mx-auto max-w-3xl px-5 lg:px-8">
         <SectionHeading title={t("faq.title")} subtitle={t("faq.subtitle")} />
         <Reveal delay={100} className="mt-12">
           <Accordion type="single" collapsible className="space-y-3">
