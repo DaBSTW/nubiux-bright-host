@@ -204,6 +204,58 @@
   }
 }
 
+@utility deco-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in oklab, var(--brand) 8%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--brand) 8%, transparent) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black, transparent 75%);
+}
+
+@utility deco-dots {
+  background-image: radial-gradient(color-mix(in oklab, var(--brand) 16%, transparent) 1.5px, transparent 1.5px);
+  background-size: 22px 22px;
+  mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, black, transparent 70%);
+}
+
+@utility deco-orb {
+  background-image: radial-gradient(
+    circle at center,
+    color-mix(in oklab, var(--brand) 22%, transparent) 0%,
+    transparent 70%
+  );
+  filter: blur(28px);
+}
+
+@utility deco-orb-soft {
+  background-image: radial-gradient(
+    circle at center,
+    color-mix(in oklab, var(--brand-light) 20%, transparent) 0%,
+    transparent 70%
+  );
+  filter: blur(36px);
+}
+
+@keyframes deco-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -18px, 0) scale(1.06);
+  }
+}
+
+@utility deco-float {
+  animation: deco-float 14s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .deco-float {
+    animation: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
