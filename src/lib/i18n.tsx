@@ -202,6 +202,17 @@ const en: Dict = {
   "mascot.alt.server": "Nubi, the Nubiux capybara mascot, hugging a server",
   "mascot.security": "I keep your site safe 24/7.",
   "mascot.footer": "See you in the cloud!",
+
+  "discord.open": "Join our Discord",
+  "discord.close": "Close",
+  "discord.title": "Join the Nubiux Discord",
+  "discord.desc":
+    "Get accurate answers, real-time support and hosting news directly from our team and community.",
+  "discord.b1": "Fast support from real humans",
+  "discord.b2": "Status updates and maintenance notices",
+  "discord.b3": "Tips, tutorials and exclusive offers",
+  "discord.cta": "Join the server",
+  "discord.members": "Open community · Free to join",
 };
 
 const es: Dict = {
@@ -402,6 +413,17 @@ const es: Dict = {
   "mascot.alt.server": "Nubi, la mascota capibara de Nubiux, abrazando un servidor",
   "mascot.security": "Cuido tu sitio 24/7.",
   "mascot.footer": "¡Nos vemos en la nube!",
+
+  "discord.open": "Únete a nuestro Discord",
+  "discord.close": "Cerrar",
+  "discord.title": "Únete al Discord de Nubiux",
+  "discord.desc":
+    "Recibe información precisa, soporte en tiempo real y novedades de hosting directamente de nuestro equipo y comunidad.",
+  "discord.b1": "Soporte rápido de personas reales",
+  "discord.b2": "Avisos de estado y mantenimientos",
+  "discord.b3": "Consejos, tutoriales y ofertas exclusivas",
+  "discord.cta": "Entrar al servidor",
+  "discord.members": "Comunidad abierta · Gratis",
 };
 
 const dicts: Record<Lang, Dict> = { en, es };
