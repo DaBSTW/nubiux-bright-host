@@ -10,8 +10,8 @@ export function SiteFooter() {
     {
       title: "footer.company",
       links: [
-        { key: "footer.about", to: "/#features" },
-        { key: "footer.contact", to: "/#payment" },
+        { key: "footer.about", to: "/about" },
+        { key: "footer.contact", to: "/contact" },
       ],
     },
     {
