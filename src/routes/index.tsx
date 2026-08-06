@@ -16,6 +16,7 @@ import {
 import { Reviews } from "@/components/nubiux/Reviews";
 import { Faq } from "@/components/nubiux/Faq";
 import { SiteFooter } from "@/components/nubiux/SiteFooter";
+import { DiscordWidget } from "@/components/nubiux/DiscordWidget";
 
 const TITLE = "Nubiux — Fast, Secure & Reliable Web Hosting";
 const DESCRIPTION =
@@ -115,6 +116,7 @@ function Index() {
         <FinalCta />
       </main>
       <SiteFooter />
+      <DiscordWidget />
     </LanguageProvider>
   );
 }
