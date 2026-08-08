@@ -15,27 +15,35 @@ const base = [
 
 const plans = [
   {
-    key: "plans.premium",
-    monthly: 10,
-    yearly: 100,
-    forKey: "plans.for.premium",
-    features: ["plans.f.storage10", ...base, "plans.f.support"],
+    key: "plans.starter",
+    monthly: 3,
+    yearly: 30,
+    forKey: "plans.for.starter",
+    features: ["plans.f.web1", "plans.f.storage5", ...base, "plans.f.support"],
+    popular: false,
+  },
+  {
+    key: "plans.emprende",
+    monthly: 5,
+    yearly: 50,
+    forKey: "plans.for.emprende",
+    features: ["plans.f.web3", "plans.f.storage10", ...base, "plans.f.support"],
     popular: false,
   },
   {
     key: "plans.pro",
-    monthly: 18,
-    yearly: 180,
+    monthly: 7.5,
+    yearly: 75,
     forKey: "plans.for.pro",
-    features: ["plans.f.storage20", ...base, "plans.f.support"],
+    features: ["plans.f.web5", "plans.f.storage20", ...base, "plans.f.support"],
     popular: true,
   },
   {
     key: "plans.business",
-    monthly: 25,
-    yearly: 250,
+    monthly: 12,
+    yearly: 120,
     forKey: "plans.for.business",
-    features: ["plans.f.storage30", ...base, "plans.f.priority"],
+    features: ["plans.f.web10", "plans.f.storage35", ...base, "plans.f.priority"],
     popular: false,
   },
 ];
@@ -44,20 +52,23 @@ export function Plans() {
   const { t } = useI18n();
 
   return (
-    <section id="plans" className="relative isolate scroll-mt-20 overflow-hidden bg-background py-20 lg:py-28">
+    <section
+      id="plans"
+      className="relative isolate scroll-mt-20 overflow-hidden bg-background py-20 lg:py-28"
+    >
       <DecorGrid className="opacity-70" />
       <DecorOrb className="left-1/2 top-0 size-[30rem] -translate-x-1/2" soft />
       <DecorOrb className="-right-24 bottom-10 size-80" />
       <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
         <SectionHeading title={t("plans.title")} subtitle={t("plans.subtitle")} />
 
-        <div className="mt-14 grid gap-6 md:grid-cols-3 lg:gap-7">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-7">
           {plans.map((plan, i) => (
             <Reveal key={plan.key} delay={i * 100}>
               <article
                 className={cn(
                   "card-elevated relative flex h-full flex-col p-7 lg:p-8",
-                  plan.popular && "border-primary/40 ring-1 ring-primary/25 md:-mt-4 md:pt-11",
+                  plan.popular && "border-primary/40 ring-1 ring-primary/25 lg:-mt-4 lg:pt-11",
                 )}
               >
                 {plan.popular ? (
@@ -70,8 +81,12 @@ export function Plans() {
                 <h3 className="text-lg font-bold text-foreground">{t(plan.key)}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{t(plan.forKey)}</p>
                 <p className="mt-4 flex items-end gap-1.5">
-                  <span className="text-5xl font-extrabold tracking-tight text-foreground">${plan.monthly}</span>
-                  <span className="pb-1.5 text-sm font-medium text-muted-foreground">{t("plans.month")}</span>
+                  <span className="text-5xl font-extrabold tracking-tight text-foreground">
+                    ${plan.monthly.toFixed(2)}
+                  </span>
+                  <span className="pb-1.5 text-sm font-medium text-muted-foreground">
+                    {t("plans.month")}
+                  </span>
                 </p>
                 <p className="mt-2 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
                   <span>

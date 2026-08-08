@@ -20,7 +20,7 @@ import { DiscordWidget } from "@/components/nubiux/DiscordWidget";
 
 const TITLE = "Nubiux — Fast, Secure & Reliable Web Hosting";
 const DESCRIPTION =
-  "Premium SSD web hosting from $10/month or $100/year with free SSL, cPanel, daily backups, LiteSpeed, Imunify360 and instant activation. PayPal accepted.";
+  "Premium NVMe web hosting from $3.00/month or $30/year with free SSL, cPanel, daily backups, LiteSpeed, Imunify360 and instant activation. PayPal accepted.";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -56,9 +56,25 @@ export const Route = createFileRoute("/")({
               description: DESCRIPTION,
               brand: { "@type": "Brand", name: "Nubiux" },
               offers: [
-                { "@type": "Offer", name: "Premium Plan (annual)", price: "100", priceCurrency: "USD" },
-                { "@type": "Offer", name: "Pro Plan (annual)", price: "180", priceCurrency: "USD" },
-                { "@type": "Offer", name: "Business Plan (annual)", price: "250", priceCurrency: "USD" },
+                {
+                  "@type": "Offer",
+                  name: "Starter Plan (annual)",
+                  price: "30",
+                  priceCurrency: "USD",
+                },
+                {
+                  "@type": "Offer",
+                  name: "Emprende Plan (annual)",
+                  price: "50",
+                  priceCurrency: "USD",
+                },
+                { "@type": "Offer", name: "Pro Plan (annual)", price: "75", priceCurrency: "USD" },
+                {
+                  "@type": "Offer",
+                  name: "Business Plan (annual)",
+                  price: "120",
+                  priceCurrency: "USD",
+                },
               ],
             },
             {

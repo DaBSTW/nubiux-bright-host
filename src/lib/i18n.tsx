@@ -1,4 +1,12 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+  type ReactNode,
+} from "react";
 
 export type Lang = "en" | "es";
 
@@ -25,22 +33,30 @@ const en: Dict = {
   "hero.imageAlt": "Isometric illustration of Nubiux cloud hosting servers",
 
   "plans.title": "Simple, transparent pricing",
-  "plans.subtitle": "Every plan includes premium software, free SSL and 24/7 human support. No hidden fees.",
+  "plans.subtitle":
+    "Every plan includes premium software, free SSL and 24/7 human support. No hidden fees.",
   "plans.year": "/ Year",
   "plans.month": "/ mo",
   "plans.orAnnual": "or",
   "plans.save": "Save",
   "plans.popular": "Most Popular",
   "plans.order": "Order Now",
-  "plans.premium": "Premium",
+  "plans.starter": "Starter",
+  "plans.emprende": "Emprende",
   "plans.pro": "Pro",
   "plans.business": "Business",
-  "plans.for.premium": "Mid-size online stores, academies or sites with heavy email usage.",
-  "plans.for.pro": "News portals, marketing agencies or high-traffic blogs.",
-  "plans.for.business": "Established companies with heavy databases and large catalogs.",
-  "plans.f.storage10": "10 GB SSD Storage",
-  "plans.f.storage20": "20 GB SSD Storage",
-  "plans.f.storage30": "30 GB SSD Storage",
+  "plans.for.starter": "Perfect for a personal blog or your very first landing page.",
+  "plans.for.emprende": "Launch and grow a handful of small business sites with ease.",
+  "plans.for.pro": "Built for freelancers and agencies juggling multiple client sites.",
+  "plans.for.business": "Scale with confidence — heavy traffic, big catalogs, total control.",
+  "plans.f.web1": "1 Website",
+  "plans.f.web3": "3 Websites",
+  "plans.f.web5": "5 Websites",
+  "plans.f.web10": "10 Websites",
+  "plans.f.storage5": "5 GB NVMe Storage",
+  "plans.f.storage10": "10 GB NVMe Storage",
+  "plans.f.storage20": "20 GB NVMe Storage",
+  "plans.f.storage35": "35 GB NVMe Storage",
   "plans.f.ssl": "Free SSL",
   "plans.f.bandwidth": "Unlimited Bandwidth",
   "plans.f.cpanel": "cPanel",
@@ -50,9 +66,9 @@ const en: Dict = {
   "plans.f.support": "24/7 Support",
   "plans.f.priority": "Priority Support",
 
-
   "why.title": "Built for performance you can feel",
-  "why.subtitle": "Infrastructure, security and support engineered so your website simply never lets you down.",
+  "why.subtitle":
+    "Infrastructure, security and support engineered so your website simply never lets you down.",
   "why.1.t": "High Performance SSD Servers",
   "why.1.d": "Pure NVMe SSD storage and tuned stacks for instant response times.",
   "why.2.t": "Enterprise Security",
@@ -71,7 +87,8 @@ const en: Dict = {
   "why.8.d": "Real hosting specialists, 24/7, in English and Spanish.",
 
   "cpanel.title": "Manage everything from one clean panel",
-  "cpanel.subtitle": "The industry standard control panel comes with every plan — no learning curve required.",
+  "cpanel.subtitle":
+    "The industry standard control panel comes with every plan — no learning curve required.",
   "cpanel.1": "Manage your domains and subdomains",
   "cpanel.2": "Install WordPress with one click",
   "cpanel.3": "Create professional email accounts",
@@ -120,17 +137,23 @@ const en: Dict = {
   "faq.title": "Frequently asked questions",
   "faq.subtitle": "Everything you need to know before ordering your hosting plan.",
   "faq.1.q": "How long does activation take?",
-  "faq.1.a": "Activation is instant. As soon as your payment is confirmed you receive your cPanel credentials by email, usually in under a minute.",
+  "faq.1.a":
+    "Activation is instant. As soon as your payment is confirmed you receive your cPanel credentials by email, usually in under a minute.",
   "faq.2.q": "Do you offer SSL?",
-  "faq.2.a": "Yes. Every plan includes free SSL certificates that are installed and renewed automatically through FleetSSL.",
+  "faq.2.a":
+    "Yes. Every plan includes free SSL certificates that are installed and renewed automatically through FleetSSL.",
   "faq.3.q": "Can I upgrade later?",
-  "faq.3.a": "Absolutely. You can move to a higher plan at any moment and we handle the change with no downtime or data loss.",
+  "faq.3.a":
+    "Absolutely. You can move to a higher plan at any moment and we handle the change with no downtime or data loss.",
   "faq.4.q": "Do you accept PayPal?",
-  "faq.4.a": "Yes, all payments are securely processed through PayPal, so your financial details are never shared with us.",
+  "faq.4.a":
+    "Yes, all payments are securely processed through PayPal, so your financial details are never shared with us.",
   "faq.5.q": "Can I migrate my website?",
-  "faq.5.a": "Yes. Our team migrates your website, emails and databases from your previous provider free of charge.",
+  "faq.5.a":
+    "Yes. Our team migrates your website, emails and databases from your previous provider free of charge.",
   "faq.6.q": "Is there daily backup?",
-  "faq.6.a": "Every account is backed up daily with JetBackup and Backuply, and you can restore any snapshot yourself from cPanel.",
+  "faq.6.a":
+    "Every account is backed up daily with JetBackup and Backuply, and you can restore any snapshot yourself from cPanel.",
 
   "rev.title": "What our customers say",
   "rev.subtitle": "Real reviews from Nubiux customers published on Trustpilot.",
@@ -141,27 +164,33 @@ const en: Dict = {
   "rev.1.n": "Laura Mendez",
   "rev.1.r": "Online store owner",
   "rev.1.h": "My store loads twice as fast",
-  "rev.1.d": "I migrated my WooCommerce store and the difference was immediate. Checkout is smooth and I have not had a single outage.",
+  "rev.1.d":
+    "I migrated my WooCommerce store and the difference was immediate. Checkout is smooth and I have not had a single outage.",
   "rev.2.n": "Daniel Rivas",
   "rev.2.r": "Freelance developer",
   "rev.2.h": "Support that actually knows hosting",
-  "rev.2.d": "I wrote at 2 a.m. with a PHP issue and a real specialist fixed it in minutes. That alone is worth the price.",
+  "rev.2.d":
+    "I wrote at 2 a.m. with a PHP issue and a real specialist fixed it in minutes. That alone is worth the price.",
   "rev.3.n": "Carolina Suarez",
   "rev.3.r": "Marketing agency",
   "rev.3.h": "Perfect for managing client sites",
-  "rev.3.d": "cPanel plus one-click installs saves me hours every week. I host all of my clients on Nubiux now.",
+  "rev.3.d":
+    "cPanel plus one-click installs saves me hours every week. I host all of my clients on Nubiux now.",
   "rev.4.n": "Marcos Herrera",
   "rev.4.r": "Blogger",
   "rev.4.h": "Instant activation, no surprises",
-  "rev.4.d": "I paid with PayPal and had my credentials in less than a minute. Transparent pricing with no hidden fees.",
+  "rev.4.d":
+    "I paid with PayPal and had my credentials in less than a minute. Transparent pricing with no hidden fees.",
   "rev.5.n": "Valeria Ortiz",
   "rev.5.r": "Small business",
   "rev.5.h": "Backups saved my website",
-  "rev.5.d": "I broke my site with a bad plugin update and restored yesterday's backup in one click. Total peace of mind.",
+  "rev.5.d":
+    "I broke my site with a bad plugin update and restored yesterday's backup in one click. Total peace of mind.",
   "rev.6.n": "Andres Puente",
   "rev.6.r": "SaaS founder",
   "rev.6.h": "Rock solid uptime",
-  "rev.6.d": "Months in and monitoring still shows 100% availability. The security stack is far better than what I paid for before.",
+  "rev.6.d":
+    "Months in and monitoring still shows 100% availability. The security stack is far better than what I paid for before.",
 
   "pay.title": "Secure payments powered by PayPal",
   "pay.subtitle": "Pay with your PayPal balance, credit or debit card. Buyer protection included.",
@@ -179,7 +208,8 @@ const en: Dict = {
   "cta.subtitle": "Choose a plan, get activated in minutes and let us take care of the rest.",
   "cta.button": "Get Started",
 
-  "footer.tagline": "Premium web hosting with enterprise software licenses, instant activation and human support.",
+  "footer.tagline":
+    "Premium web hosting with enterprise software licenses, instant activation and human support.",
   "footer.company": "Company",
   "footer.product": "Product",
   "footer.legal": "Legal",
@@ -236,22 +266,30 @@ const es: Dict = {
   "hero.imageAlt": "Ilustración isométrica de los servidores cloud de Nubiux",
 
   "plans.title": "Precios simples y transparentes",
-  "plans.subtitle": "Todos los planes incluyen software premium, SSL gratis y soporte humano 24/7. Sin costes ocultos.",
+  "plans.subtitle":
+    "Todos los planes incluyen software premium, SSL gratis y soporte humano 24/7. Sin costes ocultos.",
   "plans.year": "/ Año",
   "plans.month": "/ mes",
   "plans.orAnnual": "o",
   "plans.save": "Ahorra",
   "plans.popular": "Más Popular",
   "plans.order": "Contratar Ahora",
-  "plans.premium": "Premium",
+  "plans.starter": "Starter",
+  "plans.emprende": "Emprende",
   "plans.pro": "Pro",
   "plans.business": "Business",
-  "plans.for.premium": "Tiendas online medianas, academias o sitios con mucho correo.",
-  "plans.for.pro": "Portales de noticias, agencias de marketing o blogs de tráfico alto.",
-  "plans.for.business": "Empresas consolidadas con bases de datos pesadas y catálogos amplios.",
-  "plans.f.storage10": "10 GB de Almacenamiento SSD",
-  "plans.f.storage20": "20 GB de Almacenamiento SSD",
-  "plans.f.storage30": "30 GB de Almacenamiento SSD",
+  "plans.for.starter": "Perfecto para un blog personal o tu primera landing page.",
+  "plans.for.emprende": "Lanza y haz crecer varios sitios de tu negocio con facilidad.",
+  "plans.for.pro": "Pensado para freelancers y agencias que gestionan varios sitios de clientes.",
+  "plans.for.business": "Escala con confianza: alto tráfico, catálogos grandes y control total.",
+  "plans.f.web1": "1 Sitio Web",
+  "plans.f.web3": "3 Sitios Web",
+  "plans.f.web5": "5 Sitios Web",
+  "plans.f.web10": "10 Sitios Web",
+  "plans.f.storage5": "5 GB de Almacenamiento NVMe",
+  "plans.f.storage10": "10 GB de Almacenamiento NVMe",
+  "plans.f.storage20": "20 GB de Almacenamiento NVMe",
+  "plans.f.storage35": "35 GB de Almacenamiento NVMe",
   "plans.f.ssl": "SSL Gratis",
   "plans.f.bandwidth": "Transferencia Ilimitada",
   "plans.f.cpanel": "cPanel",
@@ -260,7 +298,6 @@ const es: Dict = {
   "plans.f.instant": "Activación Instantánea",
   "plans.f.support": "Soporte 24/7",
   "plans.f.priority": "Soporte Prioritario",
-
 
   "why.title": "Rendimiento que se nota",
   "why.subtitle": "Infraestructura, seguridad y soporte diseñados para que tu web nunca te falle.",
@@ -282,7 +319,8 @@ const es: Dict = {
   "why.8.d": "Especialistas reales en hosting, 24/7, en español e inglés.",
 
   "cpanel.title": "Administra todo desde un panel claro",
-  "cpanel.subtitle": "El panel de control estándar de la industria viene con todos los planes, sin curva de aprendizaje.",
+  "cpanel.subtitle":
+    "El panel de control estándar de la industria viene con todos los planes, sin curva de aprendizaje.",
   "cpanel.1": "Administrar dominios y subdominios",
   "cpanel.2": "Instalar WordPress con un clic",
   "cpanel.3": "Crear cuentas de correo profesionales",
@@ -292,10 +330,12 @@ const es: Dict = {
   "cpanel.imageAlt": "Panel de control de hosting de Nubiux",
 
   "soft.title": "Instalaciones con un solo clic",
-  "soft.subtitle": "Despliega más de 400 aplicaciones al instante, sin configuraciones manuales ni interrupciones.",
+  "soft.subtitle":
+    "Despliega más de 400 aplicaciones al instante, sin configuraciones manuales ni interrupciones.",
 
   "sec.title": "Protección en todas las capas",
-  "sec.subtitle": "Tu sitio está defendido con las mismas herramientas que usan los proveedores empresariales.",
+  "sec.subtitle":
+    "Tu sitio está defendido con las mismas herramientas que usan los proveedores empresariales.",
   "sec.1.t": "Imunify360",
   "sec.1.d": "Defensa proactiva con inteligencia de amenazas en tiempo real.",
   "sec.2.t": "KernelCare",
@@ -331,17 +371,23 @@ const es: Dict = {
   "faq.title": "Preguntas frecuentes",
   "faq.subtitle": "Todo lo que necesitas saber antes de contratar tu plan de hosting.",
   "faq.1.q": "¿Cuánto tarda la activación?",
-  "faq.1.a": "La activación es instantánea. En cuanto se confirma tu pago recibes tus accesos de cPanel por correo, normalmente en menos de un minuto.",
+  "faq.1.a":
+    "La activación es instantánea. En cuanto se confirma tu pago recibes tus accesos de cPanel por correo, normalmente en menos de un minuto.",
   "faq.2.q": "¿Ofrecen SSL?",
-  "faq.2.a": "Sí. Todos los planes incluyen certificados SSL gratuitos que se instalan y renuevan automáticamente con FleetSSL.",
+  "faq.2.a":
+    "Sí. Todos los planes incluyen certificados SSL gratuitos que se instalan y renuevan automáticamente con FleetSSL.",
   "faq.3.q": "¿Puedo mejorar mi plan más adelante?",
-  "faq.3.a": "Por supuesto. Puedes pasar a un plan superior en cualquier momento y realizamos el cambio sin interrupciones ni pérdida de datos.",
+  "faq.3.a":
+    "Por supuesto. Puedes pasar a un plan superior en cualquier momento y realizamos el cambio sin interrupciones ni pérdida de datos.",
   "faq.4.q": "¿Aceptan PayPal?",
-  "faq.4.a": "Sí, todos los pagos se procesan de forma segura mediante PayPal, así tus datos financieros nunca se comparten con nosotros.",
+  "faq.4.a":
+    "Sí, todos los pagos se procesan de forma segura mediante PayPal, así tus datos financieros nunca se comparten con nosotros.",
   "faq.5.q": "¿Puedo migrar mi sitio web?",
-  "faq.5.a": "Sí. Nuestro equipo migra tu sitio, correos y bases de datos desde tu proveedor anterior sin coste alguno.",
+  "faq.5.a":
+    "Sí. Nuestro equipo migra tu sitio, correos y bases de datos desde tu proveedor anterior sin coste alguno.",
   "faq.6.q": "¿Hay copias de seguridad diarias?",
-  "faq.6.a": "Cada cuenta se respalda a diario con JetBackup y Backuply, y puedes restaurar cualquier copia tú mismo desde cPanel.",
+  "faq.6.a":
+    "Cada cuenta se respalda a diario con JetBackup y Backuply, y puedes restaurar cualquier copia tú mismo desde cPanel.",
 
   "rev.title": "Lo que dicen nuestros clientes",
   "rev.subtitle": "Reseñas reales de clientes de Nubiux publicadas en Trustpilot.",
@@ -352,30 +398,37 @@ const es: Dict = {
   "rev.1.n": "Laura Méndez",
   "rev.1.r": "Dueña de tienda online",
   "rev.1.h": "Mi tienda carga dos veces más rápido",
-  "rev.1.d": "Migré mi tienda WooCommerce y la diferencia fue inmediata. El checkout va fluido y no he tenido ni una caída.",
+  "rev.1.d":
+    "Migré mi tienda WooCommerce y la diferencia fue inmediata. El checkout va fluido y no he tenido ni una caída.",
   "rev.2.n": "Daniel Rivas",
   "rev.2.r": "Desarrollador freelance",
   "rev.2.h": "Un soporte que sí sabe de hosting",
-  "rev.2.d": "Escribí a las 2 de la mañana con un problema de PHP y un especialista real lo resolvió en minutos. Solo por eso vale la pena.",
+  "rev.2.d":
+    "Escribí a las 2 de la mañana con un problema de PHP y un especialista real lo resolvió en minutos. Solo por eso vale la pena.",
   "rev.3.n": "Carolina Suárez",
   "rev.3.r": "Agencia de marketing",
   "rev.3.h": "Ideal para gestionar webs de clientes",
-  "rev.3.d": "cPanel y las instalaciones con un clic me ahorran horas cada semana. Ahora alojo a todos mis clientes en Nubiux.",
+  "rev.3.d":
+    "cPanel y las instalaciones con un clic me ahorran horas cada semana. Ahora alojo a todos mis clientes en Nubiux.",
   "rev.4.n": "Marcos Herrera",
   "rev.4.r": "Bloguero",
   "rev.4.h": "Activación instantánea y sin sorpresas",
-  "rev.4.d": "Pagué con PayPal y tuve mis accesos en menos de un minuto. Precios claros y sin costes ocultos.",
+  "rev.4.d":
+    "Pagué con PayPal y tuve mis accesos en menos de un minuto. Precios claros y sin costes ocultos.",
   "rev.5.n": "Valeria Ortiz",
   "rev.5.r": "Pequeña empresa",
   "rev.5.h": "Las copias de seguridad salvaron mi web",
-  "rev.5.d": "Rompí el sitio con una actualización de un plugin y restauré la copia del día anterior con un clic. Tranquilidad total.",
+  "rev.5.d":
+    "Rompí el sitio con una actualización de un plugin y restauré la copia del día anterior con un clic. Tranquilidad total.",
   "rev.6.n": "Andrés Puente",
   "rev.6.r": "Fundador de SaaS",
   "rev.6.h": "Disponibilidad impecable",
-  "rev.6.d": "Meses después el monitoreo sigue marcando 100% de disponibilidad. La seguridad es muy superior a lo que pagaba antes.",
+  "rev.6.d":
+    "Meses después el monitoreo sigue marcando 100% de disponibilidad. La seguridad es muy superior a lo que pagaba antes.",
 
   "pay.title": "Pagos seguros con PayPal",
-  "pay.subtitle": "Paga con tu saldo de PayPal, tarjeta de crédito o débito. Protección al comprador incluida.",
+  "pay.subtitle":
+    "Paga con tu saldo de PayPal, tarjeta de crédito o débito. Protección al comprador incluida.",
 
   "trust.title": "Un hosting en el que puedes confiar",
   "trust.subtitle": "Miles de sitios web confían en Nubiux para su operación diaria.",
@@ -390,7 +443,8 @@ const es: Dict = {
   "cta.subtitle": "Elige tu plan, actívalo en minutos y nosotros nos encargamos del resto.",
   "cta.button": "Comenzar",
 
-  "footer.tagline": "Hosting web premium con licencias de software empresarial, activación instantánea y soporte humano.",
+  "footer.tagline":
+    "Hosting web premium con licencias de software empresarial, activación instantánea y soporte humano.",
   "footer.company": "Empresa",
   "footer.product": "Producto",
   "footer.legal": "Legal",
@@ -428,7 +482,11 @@ const es: Dict = {
 
 const dicts: Record<Lang, Dict> = { en, es };
 
-const LangContext = createContext<{ lang: Lang; setLang: (l: Lang) => void; t: (k: string) => string }>({
+const LangContext = createContext<{
+  lang: Lang;
+  setLang: (l: Lang) => void;
+  t: (k: string) => string;
+}>({
   lang: "en",
   setLang: () => {},
   t: (k) => k,
