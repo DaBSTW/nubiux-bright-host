@@ -4,6 +4,10 @@ import { cn } from "@/lib/utils";
 import { Reveal, SectionHeading } from "./Reveal";
 import { DecorGrid, DecorOrb } from "./Decor";
 
+function formatPrice(value: number) {
+  return Number.isInteger(value) ? String(value) : value.toFixed(2);
+}
+
 const base = [
   "plans.f.ssl",
   "plans.f.bandwidth",
@@ -82,7 +86,7 @@ export function Plans() {
                 <p className="mt-2 text-sm text-muted-foreground">{t(plan.forKey)}</p>
                 <p className="mt-4 flex items-end gap-1.5">
                   <span className="text-5xl font-extrabold tracking-tight text-foreground">
-                    ${plan.monthly.toFixed(2)}
+                    ${formatPrice(plan.monthly)}
                   </span>
                   <span className="pb-1.5 text-sm font-medium text-muted-foreground">
                     {t("plans.month")}
