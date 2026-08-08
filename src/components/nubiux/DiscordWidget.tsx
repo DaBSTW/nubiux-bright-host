@@ -35,11 +35,14 @@ export function DiscordWidget() {
   const bullets = ["discord.b1", "discord.b2", "discord.b3"];
 
   return (
-    <div ref={ref} className="fixed bottom-5 right-5 z-[60] flex flex-col items-end gap-3">
+    <div
+      ref={ref}
+      className="pointer-events-none fixed bottom-5 right-5 z-[60] flex flex-col items-end gap-3"
+    >
       <div
         className={cn(
-          "w-[19rem] max-w-[calc(100vw-2.5rem)] origin-bottom-right overflow-hidden rounded-2xl bg-[#313338] text-[#dbdee1] shadow-[0_18px_50px_-12px_rgba(0,0,0,0.55)] ring-1 ring-black/20 transition-all duration-200",
-          open ? "pointer-events-auto scale-100 opacity-100" : "pointer-events-none scale-95 opacity-0",
+          "pointer-events-none w-[19rem] max-w-[calc(100vw-2.5rem)] origin-bottom-right overflow-hidden rounded-2xl bg-[#313338] text-[#dbdee1] shadow-[0_18px_50px_-12px_rgba(0,0,0,0.55)] ring-1 ring-black/20 transition-all duration-200",
+          open ? "pointer-events-auto scale-100 opacity-100" : "scale-95 opacity-0",
         )}
         role="dialog"
         aria-label={t("discord.title")}
@@ -67,7 +70,10 @@ export function DiscordWidget() {
           <p className="text-[13px] leading-relaxed text-[#b5bac1]">{t("discord.desc")}</p>
           <ul className="mt-3 space-y-2">
             {bullets.map((b) => (
-              <li key={b} className="flex items-start gap-2 text-[12.5px] font-medium text-[#dbdee1]">
+              <li
+                key={b}
+                className="flex items-start gap-2 text-[12.5px] font-medium text-[#dbdee1]"
+              >
                 <span className="mt-0.5 inline-flex size-4 shrink-0 items-center justify-center rounded-full bg-[#23a559] text-white">
                   <Check className="size-2.5" aria-hidden="true" />
                 </span>
@@ -93,7 +99,7 @@ export function DiscordWidget() {
         aria-expanded={open}
         aria-label={t("discord.open")}
         title={t("discord.open")}
-        className="inline-flex size-14 items-center justify-center rounded-full bg-[#5865F2] text-white shadow-[0_12px_30px_-8px_rgba(88,101,242,0.75)] transition-transform duration-200 hover:scale-105 hover:bg-[#4752c4] active:scale-95"
+        className="pointer-events-auto inline-flex size-14 items-center justify-center rounded-full bg-[#5865F2] text-white shadow-[0_12px_30px_-8px_rgba(88,101,242,0.75)] transition-transform duration-200 hover:scale-105 hover:bg-[#4752c4] active:scale-95"
       >
         {open ? <X className="size-6" aria-hidden="true" /> : <DiscordMark className="size-7" />}
       </button>
