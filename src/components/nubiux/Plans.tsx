@@ -36,8 +36,8 @@ const plans = [
   },
   {
     key: "plans.pro",
-    monthly: 7.5,
-    yearly: 75,
+    monthly: 8,
+    yearly: 80,
     forKey: "plans.for.pro",
     features: ["plans.f.web5", "plans.f.storage20", ...base, "plans.f.support"],
     popular: true,

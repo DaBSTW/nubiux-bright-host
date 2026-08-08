@@ -68,7 +68,7 @@ export const Route = createFileRoute("/")({
                   price: "50",
                   priceCurrency: "USD",
                 },
-                { "@type": "Offer", name: "Pro Plan (annual)", price: "75", priceCurrency: "USD" },
+                { "@type": "Offer", name: "Pro Plan (annual)", price: "80", priceCurrency: "USD" },
                 {
                   "@type": "Offer",
                   name: "Business Plan (annual)",
