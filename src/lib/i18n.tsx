@@ -42,7 +42,7 @@ const en: Dict = {
   "plans.popular": "Most Popular",
   "plans.order": "Order Now",
   "plans.starter": "Starter",
-  "plans.emprende": "Emprende",
+  "plans.emprende": "Grow",
   "plans.pro": "Pro",
   "plans.business": "Business",
   "plans.for.starter": "Perfect for a personal blog or your very first landing page.",
