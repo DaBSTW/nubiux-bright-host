@@ -7,7 +7,18 @@ import type { Lang } from "@/lib/i18n";
 export const COMPANY_NAME = "Nubiux";
 export const CONTACT_EMAIL = "legal@nubiux.com";
 export const SUPPORT_EMAIL = "support@nubiux.com";
-export const LAST_UPDATED = "2026-08-05";
+
+export type LegalSlug = "terms" | "privacy" | "cookies" | "refunds";
+
+// Each legal document tracks its own revision date, since editing one
+// (e.g. Terms) should not make the others (Privacy, Cookies, Refunds)
+// look like they changed too.
+export const LAST_UPDATED: Record<LegalSlug, string> = {
+  terms: "2026-08-12",
+  privacy: "2026-08-05",
+  cookies: "2026-08-05",
+  refunds: "2026-08-05",
+};
 
 export type LegalSection = { h: string; p: string[] };
 export type LegalDoc = {
@@ -21,8 +32,6 @@ export type LegalDoc = {
   contactLabel: string;
   sections: LegalSection[];
 };
-
-export type LegalSlug = "terms" | "privacy" | "cookies" | "refunds";
 
 const commonEn = {
   updatedLabel: "Last updated",
@@ -47,72 +56,96 @@ const en: Record<LegalSlug, LegalDoc> = {
     ...commonEn,
     title: "Terms of Service",
     description:
-      "The rules that apply when you order, use and renew a Nubiux web hosting plan, including acceptable use and account responsibilities.",
+      "The rules that apply when you order, use and renew a Nubiux web hosting plan: account responsibilities, billing, acceptable use, backups and the limits of our liability.",
     intro:
-      "These terms describe the agreement between you and Nubiux when you order or use any of our shared web hosting plans. By completing a payment you accept them.",
+      "These Terms of Service are the agreement between you and Nubiux for the use of this website and any hosting plan you order. By completing a payment or otherwise using the service, you accept them in full.",
     sections: [
       {
-        h: "1. The service",
+        h: "1. Introduction",
         p: [
-          "Nubiux provides shared web hosting on SSD servers with cPanel, free SSL certificates, email accounts, daily backups and one-click application installs, according to the plan you purchase.",
-          "Resources such as storage and email accounts are those listed on the plan you select. Bandwidth is offered without a fixed cap but remains subject to fair use so a single account does not degrade the shared server.",
+          "These Terms of Service are a binding agreement between you and Nubiux and govern your access to this website and your use of any Nubiux hosting plan. By placing an order, completing a payment, or otherwise using the service you accept these terms in full.",
         ],
       },
       {
-        h: "2. Accounts and credentials",
+        h: "2. Your account",
         p: [
-          "You are responsible for keeping your cPanel and billing credentials secure and for all activity performed with them.",
-          "You must provide a valid email address. Service notices, invoices and activation details are sent there.",
+          "You must be at least 18 years old, or have the express consent of a parent or legal guardian, to open a Nubiux account.",
+          "You agree to provide accurate, current and complete information when ordering a plan, and to keep it up to date. We may request additional verification, such as a government-issued ID or proof of payment, before activating or reinstating a service.",
+          "You are responsible for keeping your cPanel and billing credentials confidential and for all activity carried out with them. Do not share your login details, and contact us immediately if you suspect unauthorized access.",
+          "An account with no active plan, renewal or login activity for an extended period may be treated as inactive. We always try to reach you at your registered email before removing any associated data.",
         ],
       },
       {
-        h: "3. Billing, renewals and prices",
+        h: "3. Orders, activation and payments",
         p: [
-          "Plans are billed monthly or annually in advance, in US dollars, through PayPal. Annual plans are billed for twelve months at the discounted rate shown on the pricing section.",
-          "Service continues while the plan is paid. If an invoice is not paid by its due date the account may be suspended and, after a further grace period, the data may be removed.",
-          "Prices may change. Any change is announced in advance and applies from your next renewal, never during a period you already paid.",
+          "A plan is activated once payment has been received and verified. We may deny or cancel an order, before or shortly after activation, if we reasonably suspect fraud, abuse, or a violation of these terms.",
+          "Ordering a plan grants you a license to use the hosting resources described for that plan; it does not transfer ownership of the underlying servers, software or infrastructure.",
+          "The storage, websites, email accounts and other resources available to you are those listed for your plan on our pricing page. Using resources beyond what your plan includes may require an upgrade.",
         ],
       },
       {
-        h: "4. Acceptable use",
+        h: "4. Billing, renewals and price changes",
         p: [
-          "You may not host or distribute malware, phishing pages, spam operations, content that infringes third-party rights, or material that is illegal where the service is provided.",
-          "You may not run activities that abuse shared resources, such as unattended crypto mining, public proxies, mass mailing from the shared IP, or scripts that saturate CPU or disk I/O.",
-          "Accounts used for these activities may be suspended to protect other customers on the same server. Where possible we contact you first.",
+          "Plans are billed in advance, monthly or annually, in US dollars through PayPal. Annual plans are billed for twelve months at the discounted rate shown at checkout.",
+          "Plans renew automatically at the end of each billing period unless you cancel beforehand. If a renewal is not paid by its due date the account may be suspended and, after a further grace period, the associated content may be permanently removed.",
+          "We may change our prices at any time. Any change is announced in advance and takes effect from your next renewal — never during a period you have already paid for. If you do not agree with a new price, you may cancel before it takes effect.",
         ],
       },
       {
-        h: "5. Backups and your content",
+        h: "5. Refunds",
         p: [
-          "You keep ownership of everything you upload. We only access account data when needed to operate, secure or support the service.",
-          "We create daily automated backups as an operational safety net. They are not a substitute for your own copies, so we recommend keeping independent backups of critical data.",
+          "New hosting orders are covered by our money-back guarantee. See our Refund Policy for the exact window, the exceptions that apply, and how to request one; renewals and third-party services purchased at your request are also handled as described there.",
+          `Write to ${SUPPORT_EMAIL} with your account details to start a request.`,
         ],
       },
       {
-        h: "6. Availability and support",
+        h: "6. Backups and your content",
         p: [
-          "We target 99.9% monthly uptime and monitor the infrastructure continuously. Scheduled maintenance is announced when it may cause interruption.",
-          "Support is available every day through our support channels and covers the hosting platform, cPanel and server-side issues. Custom development inside your own applications falls outside support.",
+          "You keep full ownership of everything you upload, and you are responsible for it. We only access account data when needed to operate, secure or support the service, or to respond to a valid legal request.",
+          "We run daily automated backups as an operational safety net and make reasonable efforts to help you recover lost data on request, but backups are not guaranteed to be complete, current or restorable in every case. Keep your own independent copies of anything critical.",
         ],
       },
       {
-        h: "7. Suspension and termination",
+        h: "7. Website content and accuracy",
         p: [
-          "You may cancel at any time from your account or by contacting us; the service stays active until the end of the paid period.",
-          "We may suspend or terminate an account for non-payment, for breach of the acceptable use rules, or when required to protect the platform or comply with a lawful request.",
+          "We may update this website, including plan features, pricing and policies, at any time. We try to keep it accurate, but it is provided for general information and should not be your only source before an important decision — contact us if something needs clarifying.",
+          "This website may link to third-party sites, such as PayPal or our Discord community. We do not control and are not responsible for the content, availability or practices of sites we do not operate.",
         ],
       },
       {
-        h: "8. Liability",
+        h: "8. Acceptable use",
         p: [
-          "The service is provided on a commercially reasonable basis. To the extent permitted by applicable law, our liability for any claim related to the service is limited to the amount you paid for it during the three months before the claim.",
-          "We are not responsible for losses caused by third-party software you install, by content you publish, or by the loss of credentials.",
+          "You may not use the service to host or distribute malware, phishing pages, spam or unsolicited bulk email, unconfirmed mailing lists, denial-of-service tools, or content that infringes someone else's copyright, trademark or other rights.",
+          "You may not run activities that abuse shared resources — unattended crypto mining, open proxies or relays, or scripts that saturate CPU, memory or disk I/O — or attempt to gain unauthorized access to accounts, data or systems that are not yours.",
+          "You are responsible for every user, script and integration running under your account, whether you operate it directly or grant access to someone else.",
+          "We may remove offending content and suspend or terminate an account for a breach of this policy. Where the impact on other customers allows it we contact you first; for active abuse, malware or illegal content we may act immediately and explain afterwards.",
         ],
       },
       {
-        h: "9. Changes to these terms",
+        h: "9. Service availability and changes",
         p: [
-          "We may update these terms to reflect changes in the service or in applicable rules. The date at the top of this page always shows the current version, and material changes are announced by email.",
+          "We target 99.9% monthly uptime and monitor the infrastructure continuously. Scheduled maintenance that may cause a visible interruption is announced beforehand.",
+          "We may modify, add or discontinue a feature of the service for operational, security or technical reasons. When a change affects an active plan we give reasonable notice so you can adjust or cancel before it takes effect.",
+        ],
+      },
+      {
+        h: "10. Third-party software and services",
+        p: [
+          "Your plan is provisioned with third-party software such as cPanel, LiteSpeed and Imunify360; using it is also subject to that software's own license or terms.",
+          "Payments are processed by PayPal. Using PayPal to pay for a Nubiux plan is also subject to PayPal's own user agreement and privacy policy.",
+        ],
+      },
+      {
+        h: "11. Limitation of liability",
+        p: [
+          "The service is provided on a commercially reasonable basis, without a warranty that it will be uninterrupted or error-free. To the extent permitted by applicable law, we are not liable for indirect, incidental or consequential damages, including lost profits or lost data.",
+          "Our total liability for any claim related to the service, however it arises, is limited to the amount you paid for the affected plan during the three months before the claim. We are not responsible for losses caused by third-party software you install, by content you publish, or by the loss of your own credentials.",
+        ],
+      },
+      {
+        h: "12. Changes to these terms",
+        p: [
+          "We may update these terms to reflect changes in the service or in applicable rules. The date at the top of this page always shows the current version, and material changes are also announced by email.",
         ],
       },
     ],
@@ -259,72 +292,96 @@ const es: Record<LegalSlug, LegalDoc> = {
     ...commonEs,
     title: "Términos del Servicio",
     description:
-      "Las reglas que aplican al contratar, usar y renovar un plan de hosting de Nubiux, incluido el uso aceptable y tus responsabilidades de cuenta.",
+      "Las reglas que aplican al contratar, usar y renovar un plan de hosting de Nubiux: responsabilidades de tu cuenta, facturación, uso aceptable, copias de seguridad y los límites de nuestra responsabilidad.",
     intro:
-      "Estos términos describen el acuerdo entre tú y Nubiux cuando contratas o usas cualquiera de nuestros planes de hosting compartido. Al completar un pago los aceptas.",
+      "Estos Términos del Servicio son el acuerdo entre tú y Nubiux para el uso de este sitio web y de cualquier plan de hosting que contrates. Al completar un pago o usar el servicio de cualquier otra forma, los aceptas por completo.",
     sections: [
       {
-        h: "1. El servicio",
+        h: "1. Introducción",
         p: [
-          "Nubiux ofrece hosting web compartido en servidores SSD con cPanel, certificados SSL gratuitos, cuentas de correo, copias de seguridad diarias e instalación de aplicaciones en un clic, según el plan que contrates.",
-          "Los recursos como almacenamiento y cuentas de correo son los indicados en el plan elegido. El tráfico se ofrece sin límite fijo, pero sujeto a uso razonable para que una cuenta no degrade el servidor compartido.",
+          "Estos Términos del Servicio son un acuerdo vinculante entre tú y Nubiux y rigen tu acceso a este sitio web y tu uso de cualquier plan de hosting de Nubiux. Al contratar, completar un pago o usar el servicio de cualquier otra forma, los aceptas por completo.",
         ],
       },
       {
-        h: "2. Cuentas y credenciales",
+        h: "2. Tu cuenta",
         p: [
-          "Eres responsable de mantener seguras tus credenciales de cPanel y de facturación, y de toda la actividad realizada con ellas.",
-          "Debes facilitar un correo electrónico válido: allí enviamos avisos del servicio, facturas y los datos de activación.",
+          "Debes tener al menos 18 años, o contar con el consentimiento expreso de un padre, madre o tutor legal, para abrir una cuenta en Nubiux.",
+          "Aceptas facilitar información exacta, actual y completa al contratar un plan, y mantenerla al día. Podemos solicitar verificación adicional, como un documento de identidad o un comprobante de pago, antes de activar o restablecer un servicio.",
+          "Eres responsable de mantener en secreto tus credenciales de cPanel y de facturación, y de toda la actividad realizada con ellas. No compartas tus datos de acceso y contáctanos de inmediato si sospechas un acceso no autorizado.",
+          "Una cuenta sin plan activo, renovaciones ni actividad de acceso durante un periodo prolongado puede tratarse como inactiva. Siempre intentamos contactarte en tu correo registrado antes de eliminar cualquier dato asociado.",
         ],
       },
       {
-        h: "3. Facturación, renovaciones y precios",
+        h: "3. Contratación, activación y pagos",
         p: [
-          "Los planes se facturan por adelantado, de forma mensual o anual, en dólares estadounidenses y a través de PayPal. Los planes anuales se cobran por doce meses al precio con descuento indicado en la sección de precios.",
-          "El servicio continúa mientras el plan esté pagado. Si una factura no se paga en la fecha prevista, la cuenta puede suspenderse y, tras un periodo de gracia, los datos pueden eliminarse.",
-          "Los precios pueden cambiar. Cualquier cambio se anuncia con antelación y aplica desde tu siguiente renovación, nunca durante un periodo ya pagado.",
+          "Un plan se activa una vez que el pago ha sido recibido y verificado. Podemos denegar o cancelar un pedido, antes o poco después de la activación, si sospechamos razonablemente fraude, abuso o un incumplimiento de estos términos.",
+          "Contratar un plan te otorga una licencia de uso sobre los recursos de hosting descritos para ese plan; no transfiere la propiedad de los servidores, el software ni la infraestructura subyacente.",
+          "El almacenamiento, los sitios web, las cuentas de correo y demás recursos disponibles son los indicados para tu plan en nuestra página de precios. Usar recursos por encima de lo que incluye tu plan puede requerir una mejora de plan.",
         ],
       },
       {
-        h: "4. Uso aceptable",
+        h: "4. Facturación, renovaciones y cambios de precio",
         p: [
-          "No puedes alojar ni distribuir malware, páginas de phishing, operaciones de spam, contenido que infrinja derechos de terceros ni material ilegal donde se presta el servicio.",
-          "No puedes ejecutar actividades que abusen de los recursos compartidos, como minería de criptomonedas desatendida, proxies públicos, envíos masivos desde la IP compartida o scripts que saturen CPU o disco.",
-          "Las cuentas usadas para estas actividades pueden suspenderse para proteger al resto de clientes del servidor. Cuando sea posible te contactamos antes.",
+          "Los planes se facturan por adelantado, de forma mensual o anual, en dólares estadounidenses y a través de PayPal. Los planes anuales se cobran por doce meses al precio con descuento mostrado al momento de pagar.",
+          "Los planes se renuevan automáticamente al final de cada periodo de facturación salvo que canceles antes. Si una renovación no se paga en la fecha prevista, la cuenta puede suspenderse y, tras un periodo de gracia adicional, el contenido asociado puede eliminarse de forma permanente.",
+          "Podemos cambiar nuestros precios en cualquier momento. Todo cambio se anuncia con antelación y aplica desde tu siguiente renovación, nunca durante un periodo que ya hayas pagado. Si no estás de acuerdo con un nuevo precio, puedes cancelar antes de que entre en vigor.",
         ],
       },
       {
-        h: "5. Copias de seguridad y tu contenido",
+        h: "5. Reembolsos",
         p: [
-          "Conservas la propiedad de todo lo que subes. Solo accedemos a los datos de la cuenta cuando es necesario para operar, proteger o dar soporte al servicio.",
-          "Realizamos copias automáticas diarias como red de seguridad operativa. No sustituyen tus propias copias, así que recomendamos mantener respaldos independientes de la información crítica.",
+          "Los pedidos nuevos de hosting están cubiertos por nuestra garantía de devolución de dinero. Consulta nuestra Política de Reembolsos para conocer el plazo exacto, las excepciones que aplican y cómo solicitar uno; las renovaciones y los servicios de terceros comprados a tu solicitud también se gestionan según lo descrito allí.",
+          `Escríbenos a ${SUPPORT_EMAIL} con los datos de tu cuenta para iniciar una solicitud.`,
         ],
       },
       {
-        h: "6. Disponibilidad y soporte",
+        h: "6. Copias de seguridad y tu contenido",
         p: [
-          "Nuestro objetivo es un 99,9% de disponibilidad mensual y monitorizamos la infraestructura de forma continua. El mantenimiento programado se anuncia cuando pueda causar interrupción.",
-          "El soporte está disponible todos los días por nuestros canales y cubre la plataforma de hosting, cPanel y las incidencias del servidor. El desarrollo a medida dentro de tus aplicaciones queda fuera del soporte.",
+          "Conservas la propiedad completa de todo lo que subes, y eres responsable de ello. Solo accedemos a los datos de la cuenta cuando es necesario para operar, proteger o dar soporte al servicio, o para responder a un requerimiento legal válido.",
+          "Realizamos copias de seguridad automáticas diarias como red de seguridad operativa y hacemos esfuerzos razonables para ayudarte a recuperar datos perdidos si lo solicitas, pero no garantizamos que las copias sean completas, recientes o restaurables en todos los casos. Mantén tus propias copias independientes de cualquier información crítica.",
         ],
       },
       {
-        h: "7. Suspensión y cancelación",
+        h: "7. Contenido del sitio web y su exactitud",
         p: [
-          "Puedes cancelar cuando quieras desde tu cuenta o contactándonos; el servicio sigue activo hasta el final del periodo pagado.",
-          "Podemos suspender o cancelar una cuenta por impago, por incumplir las reglas de uso aceptable o cuando sea necesario para proteger la plataforma o atender un requerimiento legal.",
+          "Podemos actualizar este sitio web, incluidas las características de los planes, los precios y las políticas, en cualquier momento. Procuramos que sea preciso, pero se ofrece con fines informativos generales y no debería ser tu única fuente antes de una decisión importante; contáctanos si algo necesita aclararse.",
+          "Este sitio web puede enlazar a sitios de terceros, como PayPal o nuestra comunidad de Discord. No controlamos ni somos responsables del contenido, la disponibilidad ni las prácticas de sitios que no operamos.",
         ],
       },
       {
-        h: "8. Responsabilidad",
+        h: "8. Uso aceptable",
         p: [
-          "El servicio se presta con criterios comercialmente razonables. En la medida que permita la ley aplicable, nuestra responsabilidad por cualquier reclamación relacionada con el servicio se limita al importe pagado por él en los tres meses anteriores.",
-          "No respondemos por pérdidas causadas por software de terceros que instales, por el contenido que publiques o por la pérdida de credenciales.",
+          "No puedes usar el servicio para alojar o distribuir malware, páginas de phishing, spam o correo masivo no solicitado, listas de correo sin confirmación, herramientas de denegación de servicio, ni contenido que infrinja derechos de autor, marcas u otros derechos de terceros.",
+          "No puedes realizar actividades que abusen de los recursos compartidos —minería de criptomonedas desatendida, proxies o relés abiertos, o scripts que saturen CPU, memoria o disco— ni intentar acceder sin autorización a cuentas, datos o sistemas que no sean tuyos.",
+          "Eres responsable de cada usuario, script e integración que se ejecute bajo tu cuenta, ya sea que lo operes tú directamente o le des acceso a otra persona.",
+          "Podemos eliminar el contenido infractor y suspender o cancelar una cuenta por incumplir esta política. Cuando el impacto en otros clientes lo permite, te contactamos primero; ante abuso activo, malware o contenido ilegal podemos actuar de inmediato y explicarlo después.",
         ],
       },
       {
-        h: "9. Cambios en estos términos",
+        h: "9. Disponibilidad del servicio y cambios",
         p: [
-          "Podemos actualizar estos términos para reflejar cambios en el servicio o en la normativa aplicable. La fecha del inicio de esta página indica siempre la versión vigente y los cambios relevantes se anuncian por correo.",
+          "Nuestro objetivo es un 99,9% de disponibilidad mensual y monitorizamos la infraestructura de forma continua. El mantenimiento programado que pueda causar una interrupción visible se anuncia con antelación.",
+          "Podemos modificar, añadir o retirar una función del servicio por motivos operativos, de seguridad o técnicos. Cuando un cambio afecta a un plan activo, avisamos con antelación razonable para que puedas ajustarte o cancelar antes de que entre en vigor.",
+        ],
+      },
+      {
+        h: "10. Software y servicios de terceros",
+        p: [
+          "Tu plan se provee con software de terceros como cPanel, LiteSpeed e Imunify360; su uso también está sujeto a la licencia o los términos propios de ese software.",
+          "Los pagos se procesan a través de PayPal. Usar PayPal para pagar un plan de Nubiux también está sujeto al acuerdo de usuario y la política de privacidad propios de PayPal.",
+        ],
+      },
+      {
+        h: "11. Limitación de responsabilidad",
+        p: [
+          "El servicio se presta con criterios comercialmente razonables, sin garantizar que será ininterrumpido o estará libre de errores. En la medida que lo permita la ley aplicable, no somos responsables de daños indirectos, incidentales o consecuentes, incluidos lucro cesante o pérdida de datos.",
+          "Nuestra responsabilidad total por cualquier reclamación relacionada con el servicio, sea cual sea su origen, se limita al importe que hayas pagado por el plan afectado durante los tres meses anteriores a la reclamación. No respondemos por pérdidas causadas por software de terceros que instales, por el contenido que publiques o por la pérdida de tus propias credenciales.",
+        ],
+      },
+      {
+        h: "12. Cambios en estos términos",
+        p: [
+          "Podemos actualizar estos términos para reflejar cambios en el servicio o en la normativa aplicable. La fecha en la parte superior de esta página siempre muestra la versión vigente, y los cambios relevantes también se anuncian por correo.",
         ],
       },
     ],
@@ -403,7 +460,9 @@ const es: Record<LegalSlug, LegalDoc> = {
       },
       {
         h: "Qué no usamos",
-        p: ["Este sitio no utiliza cookies publicitarias, rastreadores entre sitios ni píxeles de perfilado."],
+        p: [
+          "Este sitio no utiliza cookies publicitarias, rastreadores entre sitios ni píxeles de perfilado.",
+        ],
       },
       {
         h: "Contenido de terceros",

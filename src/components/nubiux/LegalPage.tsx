@@ -9,11 +9,14 @@ import { DecorGrid, DecorOrb } from "./Decor";
 function LegalBody({ slug }: { slug: LegalSlug }) {
   const { lang } = useI18n();
   const doc = getLegalDoc(lang, slug);
-  const formatted = new Date(LAST_UPDATED).toLocaleDateString(lang === "es" ? "es-ES" : "en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+  const formatted = new Date(LAST_UPDATED[slug]).toLocaleDateString(
+    lang === "es" ? "es-ES" : "en-US",
+    {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    },
+  );
 
   return (
     <main>
@@ -54,7 +57,10 @@ function LegalBody({ slug }: { slug: LegalSlug }) {
                 <h2 className="text-xl font-bold text-foreground sm:text-2xl">{section.h}</h2>
                 <div className="mt-3 space-y-3">
                   {section.p.map((paragraph) => (
-                    <p key={paragraph} className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+                    <p
+                      key={paragraph}
+                      className="text-sm leading-relaxed text-muted-foreground sm:text-base"
+                    >
                       {paragraph}
                     </p>
                   ))}
