@@ -33,8 +33,7 @@ const en: Dict = {
   "hero.imageAlt": "Isometric illustration of Nubiux cloud hosting servers",
 
   "plans.title": "Simple, transparent pricing",
-  "plans.subtitle":
-    "Every plan includes premium software, free SSL and 24/7 human support. No hidden fees.",
+  "plans.subtitle": "Every plan includes premium software, free SSL and support. No hidden fees.",
   "plans.year": "/ Year",
   "plans.month": "/ mo",
   "plans.orAnnual": "or",
@@ -63,7 +62,7 @@ const en: Dict = {
   "plans.f.backups": "Daily Backups",
   "plans.f.email": "Email Accounts",
   "plans.f.instant": "Instant Activation",
-  "plans.f.support": "24/7 Support",
+  "plans.f.support": "Support",
   "plans.f.priority": "Priority Support",
 
   "why.title": "Built for performance you can feel",
@@ -209,7 +208,7 @@ const en: Dict = {
   "cta.button": "Get Started",
 
   "footer.tagline":
-    "Premium web hosting with enterprise software licenses, instant activation and human support.",
+    "Premium web hosting with enterprise software licenses, instant activation and support.",
   "footer.company": "Company",
   "footer.product": "Product",
   "footer.legal": "Legal",
@@ -267,7 +266,7 @@ const es: Dict = {
 
   "plans.title": "Precios simples y transparentes",
   "plans.subtitle":
-    "Todos los planes incluyen software premium, SSL gratis y soporte humano 24/7. Sin costes ocultos.",
+    "Todos los planes incluyen software premium, SSL gratis y soporte. Sin costes ocultos.",
   "plans.year": "/ Año",
   "plans.month": "/ mes",
   "plans.orAnnual": "o",
@@ -296,7 +295,7 @@ const es: Dict = {
   "plans.f.backups": "Copias de Seguridad Diarias",
   "plans.f.email": "Cuentas de Correo",
   "plans.f.instant": "Activación Instantánea",
-  "plans.f.support": "Soporte 24/7",
+  "plans.f.support": "Soporte",
   "plans.f.priority": "Soporte Prioritario",
 
   "why.title": "Rendimiento que se nota",
@@ -444,7 +443,7 @@ const es: Dict = {
   "cta.button": "Comenzar",
 
   "footer.tagline":
-    "Hosting web premium con licencias de software empresarial, activación instantánea y soporte humano.",
+    "Hosting web premium con licencias de software empresarial, activación instantánea y soporte.",
   "footer.company": "Empresa",
   "footer.product": "Producto",
   "footer.legal": "Legal",

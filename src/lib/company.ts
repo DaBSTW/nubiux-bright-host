@@ -39,14 +39,14 @@ const about: Record<Lang, AboutContent> = {
       "We are a small, focused hosting team that believes fast, secure websites should not require a system administrator — or an enterprise budget.",
     storyTitle: "Our story",
     story: [
-      "Nubiux started because we were tired of hosting that felt slow, opaque and impossible to get help with. Support tickets went unanswered, renewals doubled without warning and \"unlimited\" always came with fine print.",
+      'Nubiux started because we were tired of hosting that felt slow, opaque and impossible to get help with. Support tickets went unanswered, renewals doubled without warning and "unlimited" always came with fine print.',
       "So we built the hosting we wanted to buy: pure SSD servers, cPanel with one-click app installs, free SSL, daily backups and premium software licenses already included in the price you see.",
       "Today we host stores, academies, news portals and agency projects, and we still answer every message ourselves — no scripted replies, no outsourced first line.",
     ],
     statsTitle: "Nubiux in numbers",
     stats: [
       { v: "99.9%", l: "Uptime target" },
-      { v: "24/7", l: "Human support" },
+      { v: "24/7", l: "Support" },
       { v: "<15 min", l: "Average first reply" },
       { v: "100%", l: "SSD NVMe storage" },
     ],
@@ -81,14 +81,14 @@ const about: Record<Lang, AboutContent> = {
       "Somos un equipo de hosting pequeño y enfocado que cree que tener un sitio rápido y seguro no debería exigir un administrador de sistemas — ni un presupuesto empresarial.",
     storyTitle: "Nuestra historia",
     story: [
-      "Nubiux nació porque estábamos cansados del hosting lento, opaco e imposible de contactar. Los tickets quedaban sin respuesta, las renovaciones se duplicaban sin avisar y lo \"ilimitado\" siempre traía letra pequeña.",
+      'Nubiux nació porque estábamos cansados del hosting lento, opaco e imposible de contactar. Los tickets quedaban sin respuesta, las renovaciones se duplicaban sin avisar y lo "ilimitado" siempre traía letra pequeña.',
       "Así que construimos el hosting que nosotros queríamos contratar: servidores 100% SSD, cPanel con instalación de apps en un clic, SSL gratis, copias de seguridad diarias y licencias premium ya incluidas en el precio que ves.",
       "Hoy alojamos tiendas, academias, portales de noticias y proyectos de agencias, y seguimos respondiendo cada mensaje nosotros mismos: sin respuestas automáticas ni soporte externalizado.",
     ],
     statsTitle: "Nubiux en números",
     stats: [
       { v: "99.9%", l: "Objetivo de disponibilidad" },
-      { v: "24/7", l: "Soporte humano" },
+      { v: "24/7", l: "Soporte" },
       { v: "<15 min", l: "Primera respuesta media" },
       { v: "100%", l: "Almacenamiento SSD NVMe" },
     ],
@@ -149,7 +149,8 @@ const contact: Record<Lang, ContactContent> = {
       "Sales enquiries: answered within one business day at the latest.",
     ],
     faqTitle: "Looking for a quick answer?",
-    faqText: "Most questions about plans, migrations, SSL and billing are already answered in our FAQ.",
+    faqText:
+      "Most questions about plans, migrations, SSL and billing are already answered in our FAQ.",
     faqLink: "Read the FAQ",
   },
   es: {
@@ -182,7 +183,8 @@ const contact: Record<Lang, ContactContent> = {
       "Consultas comerciales: respondidas como máximo en un día laborable.",
     ],
     faqTitle: "¿Buscas una respuesta rápida?",
-    faqText: "La mayoría de dudas sobre planes, migraciones, SSL y pagos ya están resueltas en nuestras preguntas frecuentes.",
+    faqText:
+      "La mayoría de dudas sobre planes, migraciones, SSL y pagos ya están resueltas en nuestras preguntas frecuentes.",
     faqLink: "Ver preguntas frecuentes",
   },
 };

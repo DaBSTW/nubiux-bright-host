@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ContactPage } from "@/components/nubiux/ContactPage";
 
-const TITLE = "Contact Nubiux — Sales & 24/7 Hosting Support";
+const TITLE = "Contact Nubiux — Sales & Hosting Support";
 const DESCRIPTION =
-  "Contact the Nubiux team: sales and migration questions, 24/7 technical support for cPanel, email and SSL, plus legal and privacy requests.";
+  "Contact the Nubiux team: sales and migration questions, technical support for cPanel, email and SSL, plus legal and privacy requests.";
 
 export const Route = createFileRoute("/contact")({
   component: () => <ContactPage />,

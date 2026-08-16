@@ -3,7 +3,7 @@ import { AboutPage } from "@/components/nubiux/AboutPage";
 
 const TITLE = "About Nubiux — The Team Behind Your Hosting";
 const DESCRIPTION =
-  "Meet Nubiux: a small hosting team building fast SSD cPanel hosting with honest pricing, security by default and 24/7 human support.";
+  "Meet Nubiux: a small hosting team building fast SSD cPanel hosting with honest pricing, security by default and support.";
 
 export const Route = createFileRoute("/about")({
   component: () => <AboutPage />,
