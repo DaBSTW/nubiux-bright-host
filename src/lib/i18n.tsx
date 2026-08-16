@@ -496,7 +496,18 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const stored = window.localStorage.getItem("nubiux-lang");
-    if (stored === "es" || stored === "en") setLangState(stored);
+    if (stored === "es" || stored === "en") {
+      setLangState(stored);
+      document.documentElement.lang = stored;
+      return;
+    }
+    // No saved preference yet: guess from the browser's language list so a
+    // first-time Spanish-speaking visitor doesn't land on English by default.
+    const browserLangs = navigator.languages ?? [navigator.language];
+    if (browserLangs.some((l) => l.toLowerCase().startsWith("es"))) {
+      setLangState("es");
+      document.documentElement.lang = "es";
+    }
   }, []);
 
   const setLang = useCallback((l: Lang) => {
