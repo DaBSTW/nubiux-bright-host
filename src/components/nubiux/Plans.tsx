@@ -1,4 +1,4 @@
-import { Check, Star } from "lucide-react";
+import { Check, ShieldCheck, Star } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { Reveal, SectionHeading } from "./Reveal";
