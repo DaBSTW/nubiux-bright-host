@@ -17,10 +17,13 @@ import { Reviews } from "@/components/nubiux/Reviews";
 import { Faq } from "@/components/nubiux/Faq";
 import { SiteFooter } from "@/components/nubiux/SiteFooter";
 import { DiscordWidget } from "@/components/nubiux/DiscordWidget";
+import { ProofStrip } from "@/components/nubiux/ProofStrip";
+import { StickyCta } from "@/components/nubiux/StickyCta";
+import { CookieConsent } from "@/components/nubiux/CookieConsent";
 
 const TITLE = "Nubiux — Fast, Secure & Reliable Web Hosting";
 const DESCRIPTION =
-  "Premium NVMe web hosting from $3.00/month or $30/year with free SSL, cPanel, daily backups, LiteSpeed, Imunify360 and instant activation. PayPal accepted.";
+  "Premium NVMe web hosting from $10/month or $100/year with free SSL, cPanel, daily backups, LiteSpeed, Imunify360 and instant activation. PayPal accepted.";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -58,21 +61,20 @@ export const Route = createFileRoute("/")({
               offers: [
                 {
                   "@type": "Offer",
-                  name: "Starter Plan (annual)",
-                  price: "30",
+                  name: "Premium Plan (annual)",
+                  price: "100",
                   priceCurrency: "USD",
                 },
                 {
                   "@type": "Offer",
-                  name: "Emprende Plan (annual)",
-                  price: "50",
+                  name: "Pro Plan (annual)",
+                  price: "180",
                   priceCurrency: "USD",
                 },
-                { "@type": "Offer", name: "Pro Plan (annual)", price: "80", priceCurrency: "USD" },
                 {
                   "@type": "Offer",
                   name: "Business Plan (annual)",
-                  price: "120",
+                  price: "250",
                   priceCurrency: "USD",
                 },
               ],
@@ -119,13 +121,14 @@ function Index() {
       <SiteHeader />
       <main>
         <Hero />
+        <ProofStrip />
+        <Reviews />
         <Plans />
         <WhyNubiux />
         <CPanelSection />
         <Softaculous />
         <Security />
         <Performance />
-        <Reviews />
         <Faq />
         <Payment />
         <Trust />
@@ -133,6 +136,8 @@ function Index() {
       </main>
       <SiteFooter />
       <DiscordWidget />
+      <StickyCta />
+      <CookieConsent />
     </LanguageProvider>
   );
 }
