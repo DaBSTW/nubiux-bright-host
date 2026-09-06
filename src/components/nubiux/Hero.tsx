@@ -45,8 +45,14 @@ export function Hero() {
               </a>
             </div>
           </Reveal>
+          <Reveal delay={280}>
+            <p className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-foreground">
+              <ShieldCheck className="size-4 text-primary" aria-hidden="true" />
+              {t("hero.guarantee")}
+            </p>
+          </Reveal>
           <Reveal delay={320}>
-            <ul className="mt-10 flex flex-wrap gap-x-5 gap-y-3">
+            <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-3">
               {badges.map((b) => (
                 <li key={b} className="flex items-center gap-2 text-sm font-medium text-foreground">
                   <span className="inline-flex size-5 items-center justify-center rounded-full bg-accent text-accent-foreground">
@@ -57,6 +63,7 @@ export function Hero() {
               ))}
             </ul>
           </Reveal>
+
         </div>
 
         <Reveal delay={160} className="relative">
