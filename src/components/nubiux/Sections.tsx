@@ -24,9 +24,9 @@ import {
   Zap,
   type LucideIcon,
 } from "lucide-react";
-import cpanelImage from "@/assets/cpanel-dashboard.jpg";
-import mascotShield from "@/assets/mascot-shield.png";
-import mascotServer from "@/assets/mascot-server.png";
+import cpanelImage from "@/assets/cpanel-dashboard.webp";
+import mascotShield from "@/assets/mascot-shield.webp";
+import mascotServer from "@/assets/mascot-server.webp";
 import wordpressLogo from "@/assets/apps/wordpress.svg";
 import joomlaLogo from "@/assets/apps/joomla.svg";
 import drupalLogo from "@/assets/apps/drupal.svg";

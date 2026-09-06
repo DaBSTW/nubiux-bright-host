@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import logo from "@/assets/nubiux-logo.png";
-import mascotWave from "@/assets/mascot-wave.png";
+import logo from "@/assets/nubiux-logo.webp";
+import mascotWave from "@/assets/mascot-wave.webp";
 import { useI18n } from "@/lib/i18n";
 
 export function SiteFooter() {

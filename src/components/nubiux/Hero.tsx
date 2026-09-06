@@ -1,6 +1,6 @@
 import { ArrowRight, Check, ShieldCheck } from "lucide-react";
-import heroImage from "@/assets/hero-cloud.jpg";
-import mascotWave from "@/assets/mascot-wave.png";
+import heroImage from "@/assets/hero-cloud.webp";
+import mascotWave from "@/assets/mascot-wave.webp";
 import { useI18n } from "@/lib/i18n";
 import { Reveal } from "./Reveal";
 

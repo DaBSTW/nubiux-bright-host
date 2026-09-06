@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowLeft, Mail } from "lucide-react";
-import mascotWave from "@/assets/mascot-wave.png";
+import mascotWave from "@/assets/mascot-wave.webp";
 import { LanguageProvider, useI18n } from "@/lib/i18n";
 import { getAbout, SALES_EMAIL } from "@/lib/company";
 import { SiteHeader } from "./SiteHeader";
