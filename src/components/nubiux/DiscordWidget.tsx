@@ -37,7 +37,7 @@ export function DiscordWidget() {
   return (
     <div
       ref={ref}
-      className="pointer-events-none fixed bottom-5 right-5 z-[60] flex flex-col items-end gap-3"
+      className="pointer-events-none fixed bottom-24 right-5 z-[60] md:bottom-5 flex flex-col items-end gap-3"
     >
       <div
         className={cn(

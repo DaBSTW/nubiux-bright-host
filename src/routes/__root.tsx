@@ -94,6 +94,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
       { rel: "icon", type: "image/png", href: "/favicon.png" },
+      { rel: "alternate", hrefLang: "x-default", href: "https://nubiux-bright-host.lovable.app/" },
+      { rel: "alternate", hrefLang: "en", href: "https://nubiux-bright-host.lovable.app/" },
+      { rel: "alternate", hrefLang: "es", href: "https://nubiux-bright-host.lovable.app/" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {

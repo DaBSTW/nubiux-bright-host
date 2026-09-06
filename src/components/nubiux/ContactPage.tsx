@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowLeft, Clock, Mail } from "lucide-react";
-import mascotServer from "@/assets/mascot-server.png";
+import mascotServer from "@/assets/mascot-server.webp";
 import { LanguageProvider, useI18n } from "@/lib/i18n";
 import { getContact } from "@/lib/company";
 import { SiteHeader } from "./SiteHeader";
