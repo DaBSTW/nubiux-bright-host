@@ -15,42 +15,36 @@ const base = [
   "plans.f.backups",
   "plans.f.email",
   "plans.f.instant",
+  "plans.f.migration",
 ];
 
 const plans = [
   {
-    key: "plans.starter",
-    monthly: 3,
-    yearly: 30,
-    forKey: "plans.for.starter",
-    features: ["plans.f.web1", "plans.f.storage5", ...base, "plans.f.support"],
-    popular: false,
-  },
-  {
-    key: "plans.emprende",
-    monthly: 5,
-    yearly: 50,
-    forKey: "plans.for.emprende",
-    features: ["plans.f.web3", "plans.f.storage10", ...base, "plans.f.support"],
+    key: "plans.premium",
+    monthly: 10,
+    yearly: 100,
+    forKey: "plans.for.premium",
+    features: ["plans.f.storage10", ...base, "plans.f.support"],
     popular: false,
   },
   {
     key: "plans.pro",
-    monthly: 8,
-    yearly: 80,
+    monthly: 18,
+    yearly: 180,
     forKey: "plans.for.pro",
-    features: ["plans.f.web5", "plans.f.storage20", ...base, "plans.f.support"],
+    features: ["plans.f.storage20", ...base, "plans.f.support"],
     popular: true,
   },
   {
     key: "plans.business",
-    monthly: 12,
-    yearly: 120,
+    monthly: 25,
+    yearly: 250,
     forKey: "plans.for.business",
-    features: ["plans.f.web10", "plans.f.storage35", ...base, "plans.f.priority"],
+    features: ["plans.f.storage30", ...base, "plans.f.priority"],
     popular: false,
   },
 ];
+
 
 export function Plans() {
   const { t } = useI18n();
