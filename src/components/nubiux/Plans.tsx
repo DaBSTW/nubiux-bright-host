@@ -60,7 +60,7 @@ export function Plans() {
       <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
         <SectionHeading title={t("plans.title")} subtitle={t("plans.subtitle")} />
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-7">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
           {plans.map((plan, i) => (
             <Reveal key={plan.key} delay={i * 100}>
               <article
