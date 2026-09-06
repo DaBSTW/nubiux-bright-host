@@ -121,7 +121,28 @@ export function Plans() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={120}>
+          <div className="mt-12 flex flex-col items-center gap-4 text-center">
+            <p className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-foreground shadow-[var(--shadow-card)]">
+              <ShieldCheck className="size-4 text-primary" aria-hidden="true" />
+              {t("plans.guarantee")}
+            </p>
+            <p className="text-sm text-muted-foreground">
+              {t("plans.help")}{" "}
+              <a
+                href="https://discord.gg/nubiux"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-primary underline-offset-4 hover:underline"
+              >
+                {t("plans.helpCta")}
+              </a>
+            </p>
+          </div>
+        </Reveal>
       </div>
+
     </section>
   );
 }
