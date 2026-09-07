@@ -20,30 +20,39 @@ const base = [
 
 const plans = [
   {
-    key: "plans.premium",
-    monthly: 10,
-    yearly: 100,
-    forKey: "plans.for.premium",
-    features: ["plans.f.storage10", ...base, "plans.f.support"],
+    key: "plans.starter",
+    monthly: 3,
+    yearly: 30,
+    forKey: "plans.for.starter",
+    features: ["plans.f.web1", "plans.f.storage5", ...base, "plans.f.support"],
+    popular: false,
+  },
+  {
+    key: "plans.emprende",
+    monthly: 5,
+    yearly: 50,
+    forKey: "plans.for.emprende",
+    features: ["plans.f.web3", "plans.f.storage10", ...base, "plans.f.support"],
     popular: false,
   },
   {
     key: "plans.pro",
-    monthly: 18,
-    yearly: 180,
+    monthly: 8,
+    yearly: 80,
     forKey: "plans.for.pro",
-    features: ["plans.f.storage20", ...base, "plans.f.support"],
+    features: ["plans.f.web5", "plans.f.storage20", ...base, "plans.f.support"],
     popular: true,
   },
   {
     key: "plans.business",
-    monthly: 25,
-    yearly: 250,
+    monthly: 12,
+    yearly: 120,
     forKey: "plans.for.business",
-    features: ["plans.f.storage30", ...base, "plans.f.priority"],
+    features: ["plans.f.web10", "plans.f.storage35", ...base, "plans.f.priority"],
     popular: false,
   },
 ];
+
 
 
 export function Plans() {
@@ -60,7 +69,7 @@ export function Plans() {
       <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
         <SectionHeading title={t("plans.title")} subtitle={t("plans.subtitle")} />
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-7">
           {plans.map((plan, i) => (
             <Reveal key={plan.key} delay={i * 100}>
               <article
