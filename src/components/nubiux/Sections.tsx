@@ -38,13 +38,22 @@ import { useI18n } from "@/lib/i18n";
 import { Reveal, SectionHeading } from "./Reveal";
 import { DecorDots, DecorGrid, DecorOrb } from "./Decor";
 
-function IconTile({ icon: Icon }: { icon: LucideIcon }) {
+function IconTile({ icon: Icon, className }: { icon: LucideIcon; className?: string }) {
   return (
-    <span className="inline-flex size-11 items-center justify-center rounded-xl bg-accent text-accent-foreground">
+    <span className={`inline-flex size-11 items-center justify-center rounded-xl ${className ?? "bg-accent text-accent-foreground"}`}>
       <Icon className="size-5" aria-hidden="true" />
     </span>
   );
 }
+
+const featureStyles = [
+  { card: "border-card-blue-foreground/15 bg-card-blue", icon: "bg-background text-card-blue-foreground" },
+  { card: "border-card-mint-foreground/15 bg-card-mint", icon: "bg-background text-card-mint-foreground" },
+  { card: "border-card-amber-foreground/15 bg-card-amber", icon: "bg-background text-card-amber-foreground" },
+  { card: "border-card-ink bg-card-ink", icon: "bg-primary text-primary-foreground", text: "text-card-ink-foreground", muted: "text-card-ink-foreground/70" },
+];
+
+const bentoSpans = ["lg:col-span-2", "lg:col-span-1", "lg:col-span-1", "lg:col-span-2", "lg:col-span-1", "lg:col-span-1", "lg:col-span-2", "lg:col-span-2"];
 
 const why: { key: string; icon: LucideIcon }[] = [
   { key: "why.1", icon: HardDrive },
@@ -66,13 +75,13 @@ export function WhyNubiux() {
       <DecorOrb className="-right-20 bottom-0 size-80" />
       <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
         <SectionHeading title={t("why.title")} subtitle={t("why.subtitle")} />
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {why.map((w, i) => (
-            <Reveal key={w.key} delay={(i % 4) * 80}>
-              <article className="card-elevated h-full p-6">
-                <IconTile icon={w.icon} />
-                <h3 className="mt-5 text-base font-bold text-foreground">{t(`${w.key}.t`)}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(`${w.key}.d`)}</p>
+            <Reveal key={w.key} delay={(i % 4) * 80} className={bentoSpans[i]}>
+              <article className={`h-full rounded-xl border p-6 shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] ${featureStyles[i % 4].card}`}>
+                <IconTile icon={w.icon} className={featureStyles[i % 4].icon} />
+                <h3 className={`mt-5 text-base font-bold text-foreground ${featureStyles[i % 4].text ?? ""}`}>{t(`${w.key}.t`)}</h3>
+                <p className={`mt-2 text-sm leading-relaxed text-muted-foreground ${featureStyles[i % 4].muted ?? ""}`}>{t(`${w.key}.d`)}</p>
               </article>
             </Reveal>
           ))}
@@ -209,13 +218,13 @@ export function Security() {
             {t("mascot.security")}
           </span>
         </Reveal>
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {security.map((s, i) => (
-            <Reveal key={s.key} delay={(i % 4) * 80}>
-              <article className="card-elevated h-full p-6">
-                <IconTile icon={s.icon} />
-                <h3 className="mt-5 text-base font-bold text-foreground">{t(`${s.key}.t`)}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(`${s.key}.d`)}</p>
+            <Reveal key={s.key} delay={(i % 4) * 80} className={bentoSpans[i]}>
+              <article className={`h-full rounded-xl border p-6 shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] ${featureStyles[i % 4].card}`}>
+                <IconTile icon={s.icon} className={featureStyles[i % 4].icon} />
+                <h3 className={`mt-5 text-base font-bold text-foreground ${featureStyles[i % 4].text ?? ""}`}>{t(`${s.key}.t`)}</h3>
+                <p className={`mt-2 text-sm leading-relaxed text-muted-foreground ${featureStyles[i % 4].muted ?? ""}`}>{t(`${s.key}.d`)}</p>
               </article>
             </Reveal>
           ))}
@@ -244,13 +253,13 @@ export function Performance() {
       <DecorOrb className="-left-16 bottom-4 size-72" />
       <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
         <SectionHeading title={t("perf.title")} subtitle={t("perf.subtitle")} />
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {perf.map((p, i) => (
-            <Reveal key={p.key} delay={(i % 4) * 80}>
-              <article className="card-elevated h-full p-6">
-                <IconTile icon={p.icon} />
-                <h3 className="mt-5 text-base font-bold text-foreground">{t(`${p.key}.t`)}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(`${p.key}.d`)}</p>
+            <Reveal key={p.key} delay={(i % 4) * 80} className={bentoSpans[i]}>
+              <article className={`h-full rounded-xl border p-6 shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] ${featureStyles[(i + 1) % 4].card}`}>
+                <IconTile icon={p.icon} className={featureStyles[(i + 1) % 4].icon} />
+                <h3 className={`mt-5 text-base font-bold text-foreground ${featureStyles[(i + 1) % 4].text ?? ""}`}>{t(`${p.key}.t`)}</h3>
+                <p className={`mt-2 text-sm leading-relaxed text-muted-foreground ${featureStyles[(i + 1) % 4].muted ?? ""}`}>{t(`${p.key}.d`)}</p>
               </article>
             </Reveal>
           ))}

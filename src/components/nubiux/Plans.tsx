@@ -53,7 +53,34 @@ const plans = [
   },
 ];
 
-
+const planStyles = [
+  {
+    card: "border-card-blue-foreground/15 bg-card-blue",
+    label: "text-card-blue-foreground",
+    check: "bg-background text-card-blue-foreground",
+    button: "border border-card-blue-foreground/25 bg-background text-card-blue-foreground hover:border-card-blue-foreground",
+  },
+  {
+    card: "border-card-mint-foreground/15 bg-card-mint",
+    label: "text-card-mint-foreground",
+    check: "bg-background text-card-mint-foreground",
+    button: "border border-card-mint-foreground/25 bg-background text-card-mint-foreground hover:border-card-mint-foreground",
+  },
+  {
+    card: "border-primary bg-primary text-primary-foreground shadow-[var(--shadow-lift)] lg:-translate-y-4",
+    label: "text-primary-foreground",
+    muted: "text-primary-foreground/75",
+    check: "bg-primary-foreground/15 text-primary-foreground",
+    divider: "border-primary-foreground/20",
+    button: "bg-primary-foreground text-primary shadow-[var(--shadow-card)] hover:bg-card-blue",
+  },
+  {
+    card: "border-2 border-card-amber-foreground/35 bg-card-amber",
+    label: "text-card-amber-foreground",
+    check: "bg-background text-card-amber-foreground",
+    button: "bg-card-ink text-card-ink-foreground hover:opacity-90",
+  },
+];
 
 export function Plans() {
   const { t } = useI18n();
@@ -69,13 +96,16 @@ export function Plans() {
       <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
         <SectionHeading title={t("plans.title")} subtitle={t("plans.subtitle")} />
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-7">
-          {plans.map((plan, i) => (
+        <div className="mt-14 grid items-end gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-7">
+          {plans.map((plan, i) => {
+            const style = planStyles[i] ?? planStyles[0];
+            return (
             <Reveal key={plan.key} delay={i * 100}>
               <article
                 className={cn(
-                  "card-elevated relative flex h-full flex-col p-7 lg:p-8",
-                  plan.popular && "border-primary/40 ring-1 ring-primary/25 lg:-mt-4 lg:pt-11",
+                  "relative flex h-full flex-col rounded-2xl border p-7 shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[var(--shadow-lift)] lg:p-8",
+                  style.card,
+                  plan.popular && "lg:pt-11",
                 )}
               >
                 {plan.popular ? (
@@ -85,32 +115,32 @@ export function Plans() {
                   </span>
                 ) : null}
 
-                <h3 className="text-lg font-bold text-foreground">{t(plan.key)}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{t(plan.forKey)}</p>
+                <h3 className={cn("text-lg font-bold", style.label)}>{t(plan.key)}</h3>
+                <p className={cn("mt-2 text-sm text-muted-foreground", style.muted)}>{t(plan.forKey)}</p>
                 <p className="mt-4 flex items-end gap-1.5">
-                  <span className="text-5xl font-extrabold tracking-tight text-foreground">
+                  <span className={cn("text-5xl font-extrabold tracking-tight text-foreground", style.label)}>
                     ${formatPrice(plan.monthly)}
                   </span>
-                  <span className="pb-1.5 text-sm font-medium text-muted-foreground">
+                  <span className={cn("pb-1.5 text-sm font-medium text-muted-foreground", style.muted)}>
                     {t("plans.month")}
                   </span>
                 </p>
-                <p className="mt-2 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+                <p className={cn("mt-2 flex flex-wrap items-center gap-2 text-sm text-muted-foreground", style.muted)}>
                   <span>
                     {t("plans.orAnnual")} ${plan.yearly} {t("plans.year")}
                   </span>
-                  <span className="rounded-full bg-accent px-2.5 py-1 text-xs font-semibold text-accent-foreground">
+                  <span className={cn("rounded-full bg-background px-2.5 py-1 text-xs font-semibold", style.label)}>
                     {t("plans.save")} {Math.round((1 - plan.yearly / (plan.monthly * 12)) * 100)}%
                   </span>
                 </p>
 
-                <ul className="mt-7 flex-1 space-y-3.5 border-t border-border pt-7">
+                <ul className={cn("mt-7 flex-1 space-y-3.5 border-t border-border pt-7", style.divider)}>
                   {plan.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2.5 text-sm text-muted-foreground">
-                      <span className="mt-0.5 inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-accent text-accent-foreground">
+                    <li key={f} className={cn("flex items-start gap-2.5 text-sm text-muted-foreground", style.muted)}>
+                      <span className={cn("mt-0.5 inline-flex size-5 shrink-0 items-center justify-center rounded-full", style.check)}>
                         <Check className="size-3" aria-hidden="true" />
                       </span>
-                      <span className="text-foreground">{t(f)}</span>
+                      <span className={cn("text-foreground", style.label)}>{t(f)}</span>
                     </li>
                   ))}
                 </ul>
@@ -118,17 +148,16 @@ export function Plans() {
                 <a
                   href="#payment"
                   className={cn(
-                    "mt-8 inline-flex items-center justify-center rounded-full px-6 py-3.5 text-sm font-semibold transition-all hover:-translate-y-0.5",
-                    plan.popular
-                      ? "bg-primary text-primary-foreground shadow-[var(--shadow-lift)]"
-                      : "border border-border bg-card text-foreground hover:border-primary hover:text-primary",
+                    "mt-8 inline-flex items-center justify-center rounded-xl px-6 py-3.5 text-sm font-semibold transition-all hover:-translate-y-0.5",
+                    style.button,
                   )}
                 >
                   {t("plans.order")}
                 </a>
               </article>
             </Reveal>
-          ))}
+            );
+          })}
         </div>
 
         <Reveal delay={120}>

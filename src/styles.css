@@ -25,6 +25,14 @@
   --color-brand-light: var(--brand-light);
   --color-brand-soft: var(--brand-soft);
   --color-surface: var(--surface);
+  --color-card-blue: var(--card-blue);
+  --color-card-blue-foreground: var(--card-blue-foreground);
+  --color-card-mint: var(--card-mint);
+  --color-card-mint-foreground: var(--card-mint-foreground);
+  --color-card-amber: var(--card-amber);
+  --color-card-amber-foreground: var(--card-amber-foreground);
+  --color-card-ink: var(--card-ink);
+  --color-card-ink-foreground: var(--card-ink-foreground);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -73,6 +81,14 @@
   --brand-light: oklch(0.727 0.146 254.2);
   --brand-soft: oklch(0.962 0.019 254.6);
   --surface: oklch(0.984 0.003 247.9);
+  --card-blue: oklch(0.97 0.018 254.6);
+  --card-blue-foreground: oklch(0.42 0.17 262.3);
+  --card-mint: oklch(0.975 0.022 166);
+  --card-mint-foreground: oklch(0.39 0.105 166);
+  --card-amber: oklch(0.982 0.026 88);
+  --card-amber-foreground: oklch(0.48 0.12 69);
+  --card-ink: oklch(0.245 0.045 260);
+  --card-ink-foreground: oklch(0.97 0.01 255);
   --background: oklch(1 0 0);
   --foreground: oklch(0.311 0.032 259.5);
   --card: oklch(1 0 0);
@@ -113,6 +129,14 @@
 
 .dark {
   --background: oklch(0.129 0.042 264.695);
+  --card-blue: oklch(0.25 0.065 260);
+  --card-blue-foreground: oklch(0.82 0.09 254);
+  --card-mint: oklch(0.24 0.045 166);
+  --card-mint-foreground: oklch(0.83 0.09 166);
+  --card-amber: oklch(0.25 0.045 75);
+  --card-amber-foreground: oklch(0.87 0.11 82);
+  --card-ink: oklch(0.18 0.035 260);
+  --card-ink-foreground: oklch(0.98 0.003 248);
   --foreground: oklch(0.984 0.003 247.858);
   --card: oklch(0.208 0.042 265.755);
   --card-foreground: oklch(0.984 0.003 247.858);
