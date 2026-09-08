@@ -46,14 +46,28 @@ function IconTile({ icon: Icon, className }: { icon: LucideIcon; className?: str
   );
 }
 
+const defaultFeatureStyle = {
+  card: "border-border bg-card",
+  icon: "bg-card-blue text-primary",
+  accent: "before:bg-primary",
+};
+
 const featureStyles = [
-  { card: "border-card-blue-foreground/15 bg-card-blue", icon: "bg-background text-card-blue-foreground" },
-  { card: "border-card-mint-foreground/15 bg-card-mint", icon: "bg-background text-card-mint-foreground" },
-  { card: "border-card-amber-foreground/15 bg-card-amber", icon: "bg-background text-card-amber-foreground" },
-  { card: "border-card-ink bg-card-ink", icon: "bg-primary text-primary-foreground", text: "text-card-ink-foreground", muted: "text-card-ink-foreground/70" },
+  defaultFeatureStyle,
+  { card: "border-border bg-card", icon: "bg-card-mint text-card-mint-foreground", accent: "before:bg-card-mint-foreground" },
+  { card: "border-border bg-card", icon: "bg-card-amber text-card-amber-foreground", accent: "before:bg-card-amber-foreground" },
+  { card: "border-border bg-card", icon: "bg-secondary text-foreground", accent: "before:bg-foreground" },
 ];
 
 const bentoSpans = ["lg:col-span-2", "lg:col-span-1", "lg:col-span-1", "lg:col-span-2", "lg:col-span-1", "lg:col-span-1", "lg:col-span-2", "lg:col-span-2"];
+
+function getFeatureStyle(index: number) {
+  return featureStyles[index % featureStyles.length] ?? defaultFeatureStyle;
+}
+
+function getBentoSpan(index: number) {
+  return bentoSpans[index] ?? "lg:col-span-1";
+}
 
 const why: { key: string; icon: LucideIcon }[] = [
   { key: "why.1", icon: HardDrive },
@@ -76,15 +90,18 @@ export function WhyNubiux() {
       <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
         <SectionHeading title={t("why.title")} subtitle={t("why.subtitle")} />
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {why.map((w, i) => (
-            <Reveal key={w.key} delay={(i % 4) * 80} className={bentoSpans[i]}>
-              <article className={`h-full rounded-xl border p-6 shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] ${featureStyles[i % 4].card}`}>
-                <IconTile icon={w.icon} className={featureStyles[i % 4].icon} />
-                <h3 className={`mt-5 text-base font-bold text-foreground ${featureStyles[i % 4].text ?? ""}`}>{t(`${w.key}.t`)}</h3>
-                <p className={`mt-2 text-sm leading-relaxed text-muted-foreground ${featureStyles[i % 4].muted ?? ""}`}>{t(`${w.key}.d`)}</p>
+          {why.map((w, i) => {
+            const style = getFeatureStyle(i);
+            return (
+            <Reveal key={w.key} delay={(i % 4) * 80} className={getBentoSpan(i)}>
+              <article className={`relative h-full overflow-hidden rounded-xl border p-6 shadow-[var(--shadow-card)] before:absolute before:inset-y-0 before:left-0 before:w-1 transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] ${style.card} ${style.accent}`}>
+                <IconTile icon={w.icon} className={style.icon} />
+                <h3 className="mt-5 text-base font-bold text-foreground">{t(`${w.key}.t`)}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(`${w.key}.d`)}</p>
               </article>
             </Reveal>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
@@ -219,15 +236,18 @@ export function Security() {
           </span>
         </Reveal>
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {security.map((s, i) => (
-            <Reveal key={s.key} delay={(i % 4) * 80} className={bentoSpans[i]}>
-              <article className={`h-full rounded-xl border p-6 shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] ${featureStyles[i % 4].card}`}>
-                <IconTile icon={s.icon} className={featureStyles[i % 4].icon} />
-                <h3 className={`mt-5 text-base font-bold text-foreground ${featureStyles[i % 4].text ?? ""}`}>{t(`${s.key}.t`)}</h3>
-                <p className={`mt-2 text-sm leading-relaxed text-muted-foreground ${featureStyles[i % 4].muted ?? ""}`}>{t(`${s.key}.d`)}</p>
+          {security.map((s, i) => {
+            const style = getFeatureStyle(i);
+            return (
+            <Reveal key={s.key} delay={(i % 4) * 80} className={getBentoSpan(i)}>
+              <article className={`relative h-full overflow-hidden rounded-xl border p-6 shadow-[var(--shadow-card)] before:absolute before:inset-y-0 before:left-0 before:w-1 transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] ${style.card} ${style.accent}`}>
+                <IconTile icon={s.icon} className={style.icon} />
+                <h3 className="mt-5 text-base font-bold text-foreground">{t(`${s.key}.t`)}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(`${s.key}.d`)}</p>
               </article>
             </Reveal>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
@@ -254,15 +274,18 @@ export function Performance() {
       <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
         <SectionHeading title={t("perf.title")} subtitle={t("perf.subtitle")} />
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {perf.map((p, i) => (
-            <Reveal key={p.key} delay={(i % 4) * 80} className={bentoSpans[i]}>
-              <article className={`h-full rounded-xl border p-6 shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] ${featureStyles[(i + 1) % 4].card}`}>
-                <IconTile icon={p.icon} className={featureStyles[(i + 1) % 4].icon} />
-                <h3 className={`mt-5 text-base font-bold text-foreground ${featureStyles[(i + 1) % 4].text ?? ""}`}>{t(`${p.key}.t`)}</h3>
-                <p className={`mt-2 text-sm leading-relaxed text-muted-foreground ${featureStyles[(i + 1) % 4].muted ?? ""}`}>{t(`${p.key}.d`)}</p>
+          {perf.map((p, i) => {
+            const style = getFeatureStyle(i + 1);
+            return (
+            <Reveal key={p.key} delay={(i % 4) * 80} className={getBentoSpan(i)}>
+              <article className={`relative h-full overflow-hidden rounded-xl border p-6 shadow-[var(--shadow-card)] before:absolute before:inset-y-0 before:left-0 before:w-1 transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] ${style.card} ${style.accent}`}>
+                <IconTile icon={p.icon} className={style.icon} />
+                <h3 className="mt-5 text-base font-bold text-foreground">{t(`${p.key}.t`)}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(`${p.key}.d`)}</p>
               </article>
             </Reveal>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

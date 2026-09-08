@@ -53,18 +53,20 @@ const plans = [
   },
 ];
 
+const defaultPlanStyle = {
+  card: "border-border bg-card",
+  label: "text-foreground",
+  check: "bg-card-blue text-primary",
+  button: "border border-border bg-background text-foreground hover:border-primary hover:text-primary",
+};
+
 const planStyles = [
+  defaultPlanStyle,
   {
-    card: "border-card-blue-foreground/15 bg-card-blue",
-    label: "text-card-blue-foreground",
-    check: "bg-background text-card-blue-foreground",
-    button: "border border-card-blue-foreground/25 bg-background text-card-blue-foreground hover:border-card-blue-foreground",
-  },
-  {
-    card: "border-card-mint-foreground/15 bg-card-mint",
-    label: "text-card-mint-foreground",
-    check: "bg-background text-card-mint-foreground",
-    button: "border border-card-mint-foreground/25 bg-background text-card-mint-foreground hover:border-card-mint-foreground",
+    card: "border-border bg-card lg:translate-y-2",
+    label: "text-foreground",
+    check: "bg-card-mint text-card-mint-foreground",
+    button: "border border-border bg-background text-foreground hover:border-primary hover:text-primary",
   },
   {
     card: "border-primary bg-primary text-primary-foreground shadow-[var(--shadow-lift)] lg:-translate-y-4",
@@ -75,10 +77,10 @@ const planStyles = [
     button: "bg-primary-foreground text-primary shadow-[var(--shadow-card)] hover:bg-card-blue",
   },
   {
-    card: "border-2 border-card-amber-foreground/35 bg-card-amber",
-    label: "text-card-amber-foreground",
-    check: "bg-background text-card-amber-foreground",
-    button: "bg-card-ink text-card-ink-foreground hover:opacity-90",
+    card: "border-2 border-foreground/20 bg-card lg:translate-y-2",
+    label: "text-foreground",
+    check: "bg-card-amber text-card-amber-foreground",
+    button: "bg-foreground text-background hover:opacity-90",
   },
 ];
 
@@ -98,7 +100,7 @@ export function Plans() {
 
         <div className="mt-14 grid items-end gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-7">
           {plans.map((plan, i) => {
-            const style = planStyles[i] ?? planStyles[0];
+            const style = planStyles[i] ?? defaultPlanStyle;
             return (
             <Reveal key={plan.key} delay={i * 100}>
               <article
@@ -129,7 +131,7 @@ export function Plans() {
                   <span>
                     {t("plans.orAnnual")} ${plan.yearly} {t("plans.year")}
                   </span>
-                  <span className={cn("rounded-full bg-background px-2.5 py-1 text-xs font-semibold", style.label)}>
+                  <span className={cn("rounded-full bg-background/85 px-2.5 py-1 text-xs font-semibold", style.label)}>
                     {t("plans.save")} {Math.round((1 - plan.yearly / (plan.monthly * 12)) * 100)}%
                   </span>
                 </p>
