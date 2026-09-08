@@ -47,10 +47,10 @@ function IconTile({ icon: Icon, className }: { icon: LucideIcon; className?: str
 }
 
 const featureStyles = [
-  { card: "border-card-blue-foreground/15 bg-card-blue", icon: "bg-background text-card-blue-foreground" },
-  { card: "border-card-mint-foreground/15 bg-card-mint", icon: "bg-background text-card-mint-foreground" },
-  { card: "border-card-amber-foreground/15 bg-card-amber", icon: "bg-background text-card-amber-foreground" },
-  { card: "border-card-ink bg-card-ink", icon: "bg-primary text-primary-foreground", text: "text-card-ink-foreground", muted: "text-card-ink-foreground/70" },
+  { card: "border-border bg-card", icon: "bg-card-blue text-primary", accent: "before:bg-primary" },
+  { card: "border-border bg-card", icon: "bg-card-mint text-card-mint-foreground", accent: "before:bg-card-mint-foreground" },
+  { card: "border-border bg-card", icon: "bg-card-amber text-card-amber-foreground", accent: "before:bg-card-amber-foreground" },
+  { card: "border-border bg-card", icon: "bg-secondary text-foreground", accent: "before:bg-foreground" },
 ];
 
 const bentoSpans = ["lg:col-span-2", "lg:col-span-1", "lg:col-span-1", "lg:col-span-2", "lg:col-span-1", "lg:col-span-1", "lg:col-span-2", "lg:col-span-2"];
@@ -78,10 +78,10 @@ export function WhyNubiux() {
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {why.map((w, i) => (
             <Reveal key={w.key} delay={(i % 4) * 80} className={bentoSpans[i]}>
-              <article className={`h-full rounded-xl border p-6 shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] ${featureStyles[i % 4].card}`}>
+              <article className={`relative h-full overflow-hidden rounded-xl border p-6 shadow-[var(--shadow-card)] before:absolute before:inset-y-0 before:left-0 before:w-1 transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] ${featureStyles[i % 4].card} ${featureStyles[i % 4].accent}`}>
                 <IconTile icon={w.icon} className={featureStyles[i % 4].icon} />
-                <h3 className={`mt-5 text-base font-bold text-foreground ${featureStyles[i % 4].text ?? ""}`}>{t(`${w.key}.t`)}</h3>
-                <p className={`mt-2 text-sm leading-relaxed text-muted-foreground ${featureStyles[i % 4].muted ?? ""}`}>{t(`${w.key}.d`)}</p>
+                <h3 className="mt-5 text-base font-bold text-foreground">{t(`${w.key}.t`)}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(`${w.key}.d`)}</p>
               </article>
             </Reveal>
           ))}
@@ -221,10 +221,10 @@ export function Security() {
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {security.map((s, i) => (
             <Reveal key={s.key} delay={(i % 4) * 80} className={bentoSpans[i]}>
-              <article className={`h-full rounded-xl border p-6 shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] ${featureStyles[i % 4].card}`}>
+              <article className={`relative h-full overflow-hidden rounded-xl border p-6 shadow-[var(--shadow-card)] before:absolute before:inset-y-0 before:left-0 before:w-1 transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] ${featureStyles[i % 4].card} ${featureStyles[i % 4].accent}`}>
                 <IconTile icon={s.icon} className={featureStyles[i % 4].icon} />
-                <h3 className={`mt-5 text-base font-bold text-foreground ${featureStyles[i % 4].text ?? ""}`}>{t(`${s.key}.t`)}</h3>
-                <p className={`mt-2 text-sm leading-relaxed text-muted-foreground ${featureStyles[i % 4].muted ?? ""}`}>{t(`${s.key}.d`)}</p>
+                <h3 className="mt-5 text-base font-bold text-foreground">{t(`${s.key}.t`)}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(`${s.key}.d`)}</p>
               </article>
             </Reveal>
           ))}
@@ -256,10 +256,10 @@ export function Performance() {
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {perf.map((p, i) => (
             <Reveal key={p.key} delay={(i % 4) * 80} className={bentoSpans[i]}>
-              <article className={`h-full rounded-xl border p-6 shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] ${featureStyles[(i + 1) % 4].card}`}>
+              <article className={`relative h-full overflow-hidden rounded-xl border p-6 shadow-[var(--shadow-card)] before:absolute before:inset-y-0 before:left-0 before:w-1 transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] ${featureStyles[(i + 1) % 4].card} ${featureStyles[(i + 1) % 4].accent}`}>
                 <IconTile icon={p.icon} className={featureStyles[(i + 1) % 4].icon} />
-                <h3 className={`mt-5 text-base font-bold text-foreground ${featureStyles[(i + 1) % 4].text ?? ""}`}>{t(`${p.key}.t`)}</h3>
-                <p className={`mt-2 text-sm leading-relaxed text-muted-foreground ${featureStyles[(i + 1) % 4].muted ?? ""}`}>{t(`${p.key}.d`)}</p>
+                <h3 className="mt-5 text-base font-bold text-foreground">{t(`${p.key}.t`)}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t(`${p.key}.d`)}</p>
               </article>
             </Reveal>
           ))}
