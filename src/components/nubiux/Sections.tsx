@@ -46,8 +46,14 @@ function IconTile({ icon: Icon, className }: { icon: LucideIcon; className?: str
   );
 }
 
+const defaultFeatureStyle = {
+  card: "border-border bg-card",
+  icon: "bg-card-blue text-primary",
+  accent: "before:bg-primary",
+};
+
 const featureStyles = [
-  { card: "border-border bg-card", icon: "bg-card-blue text-primary", accent: "before:bg-primary" },
+  defaultFeatureStyle,
   { card: "border-border bg-card", icon: "bg-card-mint text-card-mint-foreground", accent: "before:bg-card-mint-foreground" },
   { card: "border-border bg-card", icon: "bg-card-amber text-card-amber-foreground", accent: "before:bg-card-amber-foreground" },
   { card: "border-border bg-card", icon: "bg-secondary text-foreground", accent: "before:bg-foreground" },
@@ -56,7 +62,7 @@ const featureStyles = [
 const bentoSpans = ["lg:col-span-2", "lg:col-span-1", "lg:col-span-1", "lg:col-span-2", "lg:col-span-1", "lg:col-span-1", "lg:col-span-2", "lg:col-span-2"];
 
 function getFeatureStyle(index: number) {
-  return featureStyles[index % featureStyles.length] ?? featureStyles[0];
+  return featureStyles[index % featureStyles.length] ?? defaultFeatureStyle;
 }
 
 function getBentoSpan(index: number) {

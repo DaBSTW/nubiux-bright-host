@@ -53,13 +53,15 @@ const plans = [
   },
 ];
 
+const defaultPlanStyle = {
+  card: "border-border bg-card",
+  label: "text-foreground",
+  check: "bg-card-blue text-primary",
+  button: "border border-border bg-background text-foreground hover:border-primary hover:text-primary",
+};
+
 const planStyles = [
-  {
-    card: "border-border bg-card",
-    label: "text-foreground",
-    check: "bg-card-blue text-primary",
-    button: "border border-border bg-background text-foreground hover:border-primary hover:text-primary",
-  },
+  defaultPlanStyle,
   {
     card: "border-border bg-card lg:translate-y-2",
     label: "text-foreground",
@@ -98,7 +100,7 @@ export function Plans() {
 
         <div className="mt-14 grid items-end gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-7">
           {plans.map((plan, i) => {
-            const style = planStyles[i] ?? planStyles[0];
+            const style = planStyles[i] ?? defaultPlanStyle;
             return (
             <Reveal key={plan.key} delay={i * 100}>
               <article
