@@ -56,7 +56,9 @@ const plans = [
 const defaultPlanStyle = {
   card: "border-border bg-card",
   label: "text-foreground",
+  muted: "text-muted-foreground",
   check: "bg-card-blue text-primary",
+  divider: "border-border",
   button: "border border-border bg-background text-foreground hover:border-primary hover:text-primary",
 };
 
