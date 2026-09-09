@@ -67,7 +67,9 @@ const planStyles = [
   {
     card: "border-border bg-card lg:translate-y-2",
     label: "text-foreground",
+    muted: "text-muted-foreground",
     check: "bg-card-mint text-card-mint-foreground",
+    divider: "border-border",
     button: "border border-border bg-background text-foreground hover:border-primary hover:text-primary",
   },
   {
@@ -81,7 +83,9 @@ const planStyles = [
   {
     card: "border-2 border-foreground/20 bg-card lg:translate-y-2",
     label: "text-foreground",
+    muted: "text-muted-foreground",
     check: "bg-card-amber text-card-amber-foreground",
+    divider: "border-border",
     button: "bg-foreground text-background hover:opacity-90",
   },
 ];
