@@ -127,14 +127,26 @@ export function Plans() {
                     {t("plans.month")}
                   </span>
                 </p>
-                <p className={cn("mt-2 flex flex-wrap items-center gap-2 text-sm text-muted-foreground", style.muted)}>
-                  <span>
+                <div
+                  className={cn(
+                    "mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm",
+                    style.muted ?? "text-muted-foreground",
+                  )}
+                >
+                  <span className="whitespace-nowrap">
                     {t("plans.orAnnual")} ${plan.yearly} {t("plans.year")}
                   </span>
-                  <span className={cn("rounded-full bg-background/85 px-2.5 py-1 text-xs font-semibold", style.label)}>
+                  <span
+                    className={cn(
+                      "shrink-0 whitespace-nowrap rounded-full px-2 py-0.5 text-xs font-bold",
+                      plan.popular
+                        ? "bg-primary-foreground/20 text-primary-foreground"
+                        : "bg-primary/10 text-primary",
+                    )}
+                  >
                     {t("plans.save")} {Math.round((1 - plan.yearly / (plan.monthly * 12)) * 100)}%
                   </span>
-                </p>
+                </div>
 
                 <ul className={cn("mt-7 flex-1 space-y-3.5 border-t border-border pt-7", style.divider)}>
                   {plan.features.map((f) => (
