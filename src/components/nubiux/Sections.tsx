@@ -24,6 +24,7 @@ import {
   Zap,
   type LucideIcon,
 } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import cpanelImage from "@/assets/cpanel-dashboard.webp";
 import mascotShield from "@/assets/mascot-shield.webp";
 import mascotServer from "@/assets/mascot-server.webp";
@@ -176,9 +177,9 @@ export function Softaculous() {
       <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
         <SectionHeading title={t("soft.title")} subtitle={t("soft.subtitle")} />
         <ul className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-7">
-          {apps.map((app, i) => (
-            <Reveal as="li" key={app.name} delay={i * 60}>
-              <div className="card-elevated flex h-full flex-col items-center gap-3 px-4 py-6 text-center">
+          {apps.map((app, i) => {
+            const inner = (
+              <>
                 <span className="inline-flex size-12 items-center justify-center rounded-2xl bg-accent">
                   <img
                     src={app.logo}
@@ -191,9 +192,25 @@ export function Softaculous() {
                   />
                 </span>
                 <span className="text-sm font-semibold text-foreground">{app.name}</span>
-              </div>
-            </Reveal>
-          ))}
+              </>
+            );
+            return (
+              <Reveal as="li" key={app.name} delay={i * 60}>
+                {app.to ? (
+                  <Link
+                    to={app.to}
+                    className="card-elevated flex h-full flex-col items-center gap-3 px-4 py-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-[var(--shadow-lift)]"
+                  >
+                    {inner}
+                  </Link>
+                ) : (
+                  <div className="card-elevated flex h-full flex-col items-center gap-3 px-4 py-6 text-center">
+                    {inner}
+                  </div>
+                )}
+              </Reveal>
+            );
+          })}
         </ul>
       </div>
     </section>
