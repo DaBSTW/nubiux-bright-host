@@ -157,8 +157,8 @@ export function CPanelSection() {
   );
 }
 
-const apps: { name: string; logo: string }[] = [
-  { name: "WordPress", logo: wordpressLogo },
+const apps: { name: string; logo: string; to?: "/wordpress" }[] = [
+  { name: "WordPress", logo: wordpressLogo, to: "/wordpress" },
   { name: "Joomla", logo: joomlaLogo },
   { name: "Drupal", logo: drupalLogo },
   { name: "PrestaShop", logo: prestashopLogo },
