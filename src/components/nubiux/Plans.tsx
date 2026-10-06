@@ -162,6 +162,16 @@ export function Plans() {
                   </span>
                 </div>
 
+                {PROMO.enabled && plan.key === PROMO.planKey ? (
+                  <div className="mt-4 rounded-xl border border-dashed border-primary/50 bg-primary/5 px-3.5 py-2.5 text-sm text-foreground">
+                    {t("plans.promo").replace("${price}", `$${formatPrice(PROMO.price)}`)}{" "}
+                    <span className="rounded-md bg-primary px-1.5 py-0.5 font-mono text-xs font-bold text-primary-foreground">
+                      {PROMO.code}
+                    </span>
+                  </div>
+                ) : null}
+
+
                 <ul className={cn("mt-7 flex-1 space-y-3.5 border-t border-border pt-7", style.divider)}>
                   {plan.features.map((f) => (
                     <li key={f} className={cn("flex items-start gap-2.5 text-sm text-muted-foreground", style.muted)}>
