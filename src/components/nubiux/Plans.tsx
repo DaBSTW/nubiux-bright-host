@@ -8,6 +8,14 @@ function formatPrice(value: number) {
   return Number.isInteger(value) ? String(value) : value.toFixed(2);
 }
 
+// Promo for the first month of the cheapest plan. Set `enabled: false` to hide it.
+export const PROMO = {
+  enabled: true,
+  code: "PROMO",
+  price: 3,
+  planKey: "plans.starter",
+};
+
 const base = [
   "plans.f.ssl",
   "plans.f.bandwidth",
