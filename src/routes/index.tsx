@@ -23,7 +23,7 @@ import { CookieConsent } from "@/components/nubiux/CookieConsent";
 
 const TITLE = "Nubiux — Fast, Secure & Reliable Web Hosting";
 const DESCRIPTION =
-  "Premium NVMe web hosting from $3/month or $30/year with free SSL, cPanel, daily backups, LiteSpeed, Imunify360 and instant activation. PayPal accepted.";
+  "Premium NVMe web hosting from $8/month or $80/year with free SSL, cPanel, daily backups, LiteSpeed, Imunify360 and instant activation. PayPal accepted.";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -62,25 +62,25 @@ export const Route = createFileRoute("/")({
                 {
                   "@type": "Offer",
                   name: "Starter Plan (annual)",
-                  price: "30",
-                  priceCurrency: "USD",
-                },
-                {
-                  "@type": "Offer",
-                  name: "Emprende Plan (annual)",
-                  price: "50",
-                  priceCurrency: "USD",
-                },
-                {
-                  "@type": "Offer",
-                  name: "Pro Plan (annual)",
                   price: "80",
                   priceCurrency: "USD",
                 },
                 {
                   "@type": "Offer",
+                  name: "Emprende Plan (annual)",
+                  price: "150",
+                  priceCurrency: "USD",
+                },
+                {
+                  "@type": "Offer",
+                  name: "Pro Plan (annual)",
+                  price: "250",
+                  priceCurrency: "USD",
+                },
+                {
+                  "@type": "Offer",
                   name: "Business Plan (annual)",
-                  price: "120",
+                  price: "400",
                   priceCurrency: "USD",
                 },
               ],

@@ -8,6 +8,14 @@ function formatPrice(value: number) {
   return Number.isInteger(value) ? String(value) : value.toFixed(2);
 }
 
+// Promo for the first month of the cheapest plan. Set `enabled: false` to hide it.
+export const PROMO = {
+  enabled: true,
+  code: "PROMO",
+  price: 3,
+  planKey: "plans.starter",
+};
+
 const base = [
   "plans.f.ssl",
   "plans.f.bandwidth",
@@ -21,32 +29,32 @@ const base = [
 const plans = [
   {
     key: "plans.starter",
-    monthly: 3,
-    yearly: 30,
+    monthly: 8,
+    yearly: 80,
     forKey: "plans.for.starter",
     features: ["plans.f.web1", "plans.f.storage5", ...base, "plans.f.support"],
     popular: false,
   },
   {
     key: "plans.emprende",
-    monthly: 5,
-    yearly: 50,
+    monthly: 15,
+    yearly: 150,
     forKey: "plans.for.emprende",
     features: ["plans.f.web3", "plans.f.storage10", ...base, "plans.f.support"],
     popular: false,
   },
   {
     key: "plans.pro",
-    monthly: 8,
-    yearly: 80,
+    monthly: 25,
+    yearly: 250,
     forKey: "plans.for.pro",
     features: ["plans.f.web5", "plans.f.storage20", ...base, "plans.f.support"],
     popular: true,
   },
   {
     key: "plans.business",
-    monthly: 12,
-    yearly: 120,
+    monthly: 40,
+    yearly: 400,
     forKey: "plans.for.business",
     features: ["plans.f.web10", "plans.f.storage35", ...base, "plans.f.priority"],
     popular: false,
@@ -153,6 +161,16 @@ export function Plans() {
                     {t("plans.save")} {Math.round((1 - plan.yearly / (plan.monthly * 12)) * 100)}%
                   </span>
                 </div>
+
+                {PROMO.enabled && plan.key === PROMO.planKey ? (
+                  <div className="mt-4 rounded-xl border border-dashed border-primary/50 bg-primary/5 px-3.5 py-2.5 text-sm text-foreground">
+                    {t("plans.promo").replace("${price}", `$${formatPrice(PROMO.price)}`)}{" "}
+                    <span className="rounded-md bg-primary px-1.5 py-0.5 font-mono text-xs font-bold text-primary-foreground">
+                      {PROMO.code}
+                    </span>
+                  </div>
+                ) : null}
+
 
                 <ul className={cn("mt-7 flex-1 space-y-3.5 border-t border-border pt-7", style.divider)}>
                   {plan.features.map((f) => (
