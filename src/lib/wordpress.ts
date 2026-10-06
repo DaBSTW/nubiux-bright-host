@@ -135,7 +135,7 @@ const content: Record<Lang, WordPressContent> = {
       },
     ],
     ctaTitle: "Launch your WordPress site today",
-    ctaText: "Instant activation, free SSL, free migration and a 30-day money-back guarantee.",
+    ctaText: "Instant activation, free SSL, free migration and a 14-day money-back guarantee.",
   },
   es: {
     back: "Volver al inicio",
@@ -247,7 +247,7 @@ const content: Record<Lang, WordPressContent> = {
       },
     ],
     ctaTitle: "Lanza tu web WordPress hoy",
-    ctaText: "Activación instantánea, SSL gratis, migración gratuita y 30 días de garantía de devolución.",
+    ctaText: "Activación instantánea, SSL gratis, migración gratuita y 14 días de garantía de devolución.",
   },
 };
 
