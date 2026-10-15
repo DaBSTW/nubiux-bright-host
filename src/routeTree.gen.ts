@@ -17,6 +17,7 @@ import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as RefundsRouteImport } from './routes/refunds'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as VpsRouteImport } from './routes/vps'
 import { Route as WordpressRouteImport } from './routes/wordpress'
 
 const IndexRoute = IndexRouteImport.update({
@@ -59,6 +60,11 @@ const TermsRoute = TermsRouteImport.update({
   path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
+const VpsRoute = VpsRouteImport.update({
+  id: '/vps',
+  path: '/vps',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WordpressRoute = WordpressRouteImport.update({
   id: '/wordpress',
   path: '/wordpress',
@@ -74,6 +80,7 @@ export interface FileRoutesByFullPath {
   '/refunds': typeof RefundsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/vps': typeof VpsRoute
   '/wordpress': typeof WordpressRoute
 }
 export interface FileRoutesByTo {
@@ -85,6 +92,7 @@ export interface FileRoutesByTo {
   '/refunds': typeof RefundsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/vps': typeof VpsRoute
   '/wordpress': typeof WordpressRoute
 }
 export interface FileRoutesById {
@@ -97,6 +105,7 @@ export interface FileRoutesById {
   '/refunds': typeof RefundsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/vps': typeof VpsRoute
   '/wordpress': typeof WordpressRoute
 }
 export interface FileRouteTypes {
@@ -110,6 +119,7 @@ export interface FileRouteTypes {
     | '/refunds'
     | '/sitemap.xml'
     | '/terms'
+    | '/vps'
     | '/wordpress'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -121,6 +131,7 @@ export interface FileRouteTypes {
     | '/refunds'
     | '/sitemap.xml'
     | '/terms'
+    | '/vps'
     | '/wordpress'
   id:
     | '__root__'
@@ -132,6 +143,7 @@ export interface FileRouteTypes {
     | '/refunds'
     | '/sitemap.xml'
     | '/terms'
+    | '/vps'
     | '/wordpress'
   fileRoutesById: FileRoutesById
 }
@@ -144,6 +156,7 @@ export interface RootRouteChildren {
   RefundsRoute: typeof RefundsRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
+  VpsRoute: typeof VpsRoute
   WordpressRoute: typeof WordpressRoute
 }
 
@@ -205,6 +218,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/vps': {
+      id: '/vps'
+      path: '/vps'
+      fullPath: '/vps'
+      preLoaderRoute: typeof VpsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/wordpress': {
       id: '/wordpress'
       path: '/wordpress'
@@ -224,6 +244,7 @@ const rootRouteChildren: RootRouteChildren = {
   RefundsRoute: RefundsRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
+  VpsRoute: VpsRoute,
   WordpressRoute: WordpressRoute,
 }
 export const routeTree = rootRouteImport
