@@ -56,11 +56,12 @@ const es = {
     month: "/ mes",
     year: "/ año",
     popular: "Más Popular",
-    note: "Todos los planes incluyen Anti-DDoS, Backups diarios y Soporte 24/7. Facturación mensual o anual con 2 meses gratis.",
+    note: "Todos los planes incluyen IP dedicada, acceso root y soporte básico. Facturación mensual o anual con 2 meses gratis.",
     plans: [
-      { name: "STARTER", sub: "Ideal para proyectos en crecimiento.", monthly: 12.99, specs: ["2 vCPU (Dedicada)", "4 GB RAM DDR4", "80 GB NVMe", "4 TB Transferencia", "1 IP Dedicada"], cta: "Elegir Starter" },
-      { name: "BUSINESS", sub: "El equilibrio perfecto para negocios serios.", monthly: 24.99, specs: ["4 vCPU (Dedicada)", "8 GB RAM DDR4", "160 GB NVMe", "8 TB Transferencia", "1 IP Dedicada"], cta: "Elegir Business", popular: true },
-      { name: "ENTERPRISE", sub: "Potencia bruta para cargas de trabajo pesadas.", monthly: 49.99, specs: ["8 vCPU (Dedicada)", "16 GB RAM DDR4", "320 GB NVMe", "Transferencia Ilimitada*", "1 IP Dedicada"], cta: "Elegir Enterprise" },
+      { name: "VPS 1", sub: "Ideal para empezar con potencia.", monthly: 12.5, specs: ["4 vCPU Cores", "8 GB RAM", "100 GB SSD", "1 Snapshot", "Puerto 200 Mbit/s", "Tráfico ilimitado", "IP dedicada", "Acceso root", "Soporte básico"], cta: "Elegir VPS 1" },
+      { name: "VPS 2", sub: "Para proyectos en crecimiento.", monthly: 18, specs: ["6 vCPU Cores", "12 GB RAM", "200 GB SSD", "2 Snapshots", "Puerto 300 Mbit/s", "Tráfico ilimitado", "IP dedicada", "Acceso root", "Soporte básico"], cta: "Elegir VPS 2" },
+      { name: "VPS 3", sub: "El equilibrio perfecto para negocios.", monthly: 30, specs: ["8 vCPU Cores", "24 GB RAM", "300 GB SSD", "3 Snapshots", "Puerto 600 Mbit/s", "Tráfico ilimitado", "IP dedicada", "Acceso root", "Soporte básico"], cta: "Elegir VPS 3", popular: true },
+      { name: "VPS 4", sub: "Potencia máxima para cargas pesadas.", monthly: 60, specs: ["12 vCPU Cores", "48 GB RAM", "400 GB SSD", "3 Snapshots", "Puerto 800 Mbit/s", "Tráfico ilimitado", "IP dedicada", "Acceso root", "Soporte básico"], cta: "Elegir VPS 4" },
     ] as VpsPlan[],
   },
   reviews: {
@@ -144,11 +145,12 @@ const en: typeof es = {
     month: "/ mo",
     year: "/ yr",
     popular: "Most Popular",
-    note: "All plans include Anti-DDoS, daily backups and 24/7 support. Monthly or yearly billing with 2 months free.",
+    note: "All plans include a dedicated IP, root access and basic support. Monthly or yearly billing with 2 months free.",
     plans: [
-      { name: "STARTER", sub: "Ideal for growing projects.", monthly: 12.99, specs: ["2 vCPU (Dedicated)", "4 GB DDR4 RAM", "80 GB NVMe", "4 TB Transfer", "1 Dedicated IP"], cta: "Choose Starter" },
-      { name: "BUSINESS", sub: "The perfect balance for serious businesses.", monthly: 24.99, specs: ["4 vCPU (Dedicated)", "8 GB DDR4 RAM", "160 GB NVMe", "8 TB Transfer", "1 Dedicated IP"], cta: "Choose Business", popular: true },
-      { name: "ENTERPRISE", sub: "Raw power for heavy workloads.", monthly: 49.99, specs: ["8 vCPU (Dedicated)", "16 GB DDR4 RAM", "320 GB NVMe", "Unlimited Transfer*", "1 Dedicated IP"], cta: "Choose Enterprise" },
+      { name: "VPS 1", sub: "Ideal to start with power.", monthly: 12.5, specs: ["4 vCPU Cores", "8 GB RAM", "100 GB SSD", "1 Snapshot", "200 Mbit/s Port", "Unlimited Traffic", "Dedicated IP", "Root access", "Basic support"], cta: "Choose VPS 1" },
+      { name: "VPS 2", sub: "For growing projects.", monthly: 18, specs: ["6 vCPU Cores", "12 GB RAM", "200 GB SSD", "2 Snapshots", "300 Mbit/s Port", "Unlimited Traffic", "Dedicated IP", "Root access", "Basic support"], cta: "Choose VPS 2" },
+      { name: "VPS 3", sub: "The perfect balance for businesses.", monthly: 30, specs: ["8 vCPU Cores", "24 GB RAM", "300 GB SSD", "3 Snapshots", "600 Mbit/s Port", "Unlimited Traffic", "Dedicated IP", "Root access", "Basic support"], cta: "Choose VPS 3", popular: true },
+      { name: "VPS 4", sub: "Maximum power for heavy workloads.", monthly: 60, specs: ["12 vCPU Cores", "48 GB RAM", "400 GB SSD", "3 Snapshots", "800 Mbit/s Port", "Unlimited Traffic", "Dedicated IP", "Root access", "Basic support"], cta: "Choose VPS 4" },
     ],
   },
   reviews: {

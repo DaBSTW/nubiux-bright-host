@@ -205,7 +205,7 @@ function VpsBody() {
               ))}
             </div>
           </div>
-          <div className="mt-14 grid items-center gap-6 md:grid-cols-3">
+          <div className="mt-14 grid items-center gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {c.pricing.plans.map((p, i) => (
               <Reveal key={p.name} delay={i * 100}>
                 <article className={cn("relative flex flex-col rounded-2xl border p-8 shadow-[var(--shadow-card)]",
