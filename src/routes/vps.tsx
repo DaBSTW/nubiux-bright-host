@@ -3,7 +3,7 @@ import { VpsPage } from "@/components/nubiux/VpsPage";
 
 const TITLE = "VPS Premium NVMe con CPU dedicada y Anti-DDoS | Nubiux";
 const DESCRIPTION =
-  "VPS premium desde $12.99/mes: NVMe, vCPU dedicada, red 10Gbps, Anti-DDoS, backups diarios, acceso root y soporte 24/7. Despliegue en menos de 60 segundos.";
+  "VPS premium desde $12.50/mes: SSD, hasta 12 vCPU, red 10Gbps, Anti-DDoS, backups diarios, acceso root y soporte 24/7. Despliegue en menos de 60 segundos.";
 
 export const Route = createFileRoute("/vps")({
   component: () => <VpsPage />,
