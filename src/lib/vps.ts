@@ -23,9 +23,9 @@ const es = {
   pain: {
     title: "¿Tu hosting actual está frenando tu crecimiento?",
     items: [
-      { icon: "🐌", title: "Cargas lentas", text: "Cada segundo de retraso te cuesta un 7% en conversiones. Los recursos compartidos matan tu velocidad." },
-      { icon: "⚠️", title: "Caídas inesperadas", text: "El error 502 o 504 no es una opción. Tu negocio debe estar online 24/7, sin excusas." },
-      { icon: "🛡️", title: "La solución Premium", text: "Recursos 100% garantizados, aislamiento total y hardware de última generación para que tú solo te preocupes por tu código o tu negocio." },
+      { title: "Cargas lentas", text: "Cada segundo de retraso te cuesta un 7% en conversiones. Los recursos compartidos matan tu velocidad." },
+      { title: "Caídas inesperadas", text: "El error 502 o 504 no es una opción. Tu negocio debe estar online 24/7, sin excusas." },
+      { title: "La solución Premium", text: "Recursos 100% garantizados, aislamiento total y hardware de última generación para que tú solo te preocupes por tu código o tu negocio." },
     ],
   },
   features: {
@@ -42,10 +42,10 @@ const es = {
   cases: {
     title: "Construido para los que no se conforman con lo básico.",
     items: [
-      { icon: "🛒", title: "E-commerce de Alto Tráfico", text: "WooCommerce, Magento, Prestashop" },
-      { icon: "💻", title: "Aplicaciones SaaS y APIs", text: "Node.js, Python, Ruby, Go" },
-      { icon: "🎮", title: "Servidores de Juegos y Comunidades", text: "Minecraft, Rust, Ark" },
-      { icon: "🏢", title: "Entornos Corporativos y ERP", text: "Odoo, SAP, bases de datos pesadas" },
+      { title: "E-commerce de Alto Tráfico", text: "WooCommerce, Magento, Prestashop" },
+      { title: "Aplicaciones SaaS y APIs", text: "Node.js, Python, Ruby, Go" },
+      { title: "Servidores de Juegos y Comunidades", text: "Minecraft, Rust, Ark" },
+      { title: "Entornos Corporativos y ERP", text: "Odoo, SAP, bases de datos pesadas" },
     ],
   },
   pricing: {
@@ -111,9 +111,9 @@ const en: typeof es = {
   pain: {
     title: "Is your current hosting holding back your growth?",
     items: [
-      { icon: "🐌", title: "Slow loading", text: "Every second of delay costs you 7% in conversions. Shared resources kill your speed." },
-      { icon: "⚠️", title: "Unexpected outages", text: "A 502 or 504 error is not an option. Your business must be online 24/7, no excuses." },
-      { icon: "🛡️", title: "The Premium solution", text: "100% guaranteed resources, full isolation and latest-generation hardware so you only worry about your code or your business." },
+      { title: "Slow loading", text: "Every second of delay costs you 7% in conversions. Shared resources kill your speed." },
+      { title: "Unexpected outages", text: "A 502 or 504 error is not an option. Your business must be online 24/7, no excuses." },
+      { title: "The Premium solution", text: "100% guaranteed resources, full isolation and latest-generation hardware so you only worry about your code or your business." },
     ],
   },
   features: {
@@ -130,10 +130,10 @@ const en: typeof es = {
   cases: {
     title: "Built for those who won't settle for basic.",
     items: [
-      { icon: "🛒", title: "High-Traffic E-commerce", text: "WooCommerce, Magento, Prestashop" },
-      { icon: "💻", title: "SaaS Apps & APIs", text: "Node.js, Python, Ruby, Go" },
-      { icon: "🎮", title: "Game Servers & Communities", text: "Minecraft, Rust, Ark" },
-      { icon: "🏢", title: "Corporate & ERP Environments", text: "Odoo, SAP, heavy databases" },
+      { title: "High-Traffic E-commerce", text: "WooCommerce, Magento, Prestashop" },
+      { title: "SaaS Apps & APIs", text: "Node.js, Python, Ruby, Go" },
+      { title: "Game Servers & Communities", text: "Minecraft, Rust, Ark" },
+      { title: "Corporate & ERP Environments", text: "Odoo, SAP, heavy databases" },
     ],
   },
   pricing: {
