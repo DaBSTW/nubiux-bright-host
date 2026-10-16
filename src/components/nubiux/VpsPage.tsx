@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Archive, Check, Cpu, HardDrive, Headset, Menu, Network, Star, Terminal, X } from "lucide-react";
+import { Archive, Building2, Check, Code2, Cpu, Gamepad2, HardDrive, Headset, Menu, Network, ShieldCheck, ShoppingCart, Star, Terminal, TriangleAlert, Turtle, X } from "lucide-react";
 import logo from "@/assets/nubiux-logo.webp";
 import mascotServer from "@/assets/mascot-server.webp";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -12,6 +12,8 @@ import { Reveal, SectionHeading } from "./Reveal";
 import { DecorDots, DecorGrid, DecorOrb } from "./Decor";
 
 const DISCORD = "https://discord.gg/nubiux";
+const painIcons = [Turtle, TriangleAlert, ShieldCheck];
+const caseIcons = [ShoppingCart, Code2, Gamepad2, Building2];
 const featureIcons = [HardDrive, Cpu, Network, Terminal, Archive, Headset];
 const accents = [
   "bg-card-blue text-primary",
@@ -137,7 +139,7 @@ function VpsBody() {
             {c.pain.items.map((p, i) => (
               <Reveal key={p.title} delay={i * 100}>
                 <div className={cn("h-full rounded-2xl border p-7 shadow-[var(--shadow-card)]", i === 2 ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card")}>
-                  <span className="text-3xl" aria-hidden="true">{p.icon}</span>
+                  {(() => { const I = painIcons[i] ?? ShieldCheck; return <span className={cn("inline-flex size-12 items-center justify-center rounded-xl", i === 2 ? "bg-primary-foreground/15 text-primary-foreground" : i === 0 ? "bg-card-amber text-card-amber-foreground" : "bg-destructive/10 text-destructive")}><I className="size-6" strokeWidth={1.75} /></span>; })()}
                   <h3 className={cn("mt-4 text-lg font-bold", i === 2 ? "text-primary-foreground" : "text-foreground")}>{p.title}</h3>
                   <p className={cn("mt-2 text-sm leading-relaxed", i === 2 ? "text-primary-foreground/80" : "text-muted-foreground")}>{p.text}</p>
                 </div>
@@ -177,7 +179,7 @@ function VpsBody() {
             {c.cases.items.map((u, i) => (
               <Reveal key={u.title} delay={i * 80}>
                 <div className={cn("h-full rounded-2xl border border-border p-7", accent(i + 1), i === 3 && "bg-secondary text-foreground")}>
-                  <span className="text-4xl" aria-hidden="true">{u.icon}</span>
+                  {(() => { const I = caseIcons[i] ?? Code2; return <span className="inline-flex size-12 items-center justify-center rounded-xl border border-border bg-card text-primary shadow-[var(--shadow-card)]"><I className="size-6" strokeWidth={1.75} /></span>; })()}
                   <h3 className="mt-5 text-base font-bold text-foreground">{u.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{u.text}</p>
                 </div>
